@@ -5,7 +5,7 @@ export const projects = [
     github: "https://github.com/annierome1/FINAL_PROJECT",
     description:
     "A full-stack web application created for the Glazier Children's Museum as part of a software engineering project. Our team was assigned a client and challenged to develop a product for them.",
-    link: "https://brytonmontgomery.pythonanywhere.com/csctest/",
+    link: "https://anniecrome1.pythonanywhere.com/",
     technologies: [
       { name: "Django", icon: "SiDjango" },
       { name: "Mysql", icon: "SiMysql" }
@@ -30,6 +30,7 @@ export const projects = [
   {
     title: "Portfolio",
     subtitle: "Personal Portfolio Website",
+    github: "https://github.com/annierome1/portfolio1",
     description:
      "This website that I coded in order to showcase my skills, experiences, and projects",
      technologies: [
