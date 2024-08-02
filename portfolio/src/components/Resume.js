@@ -7,7 +7,7 @@ export default function Resume() {
       <h1 className="text-4xl font-medium title-font mb-4 text-center">My Resume</h1>
       <div className="text-center">
         <iframe
-          src="/Annie_Rome_Resume (2).pdf"
+          src="/resume.pdf"
           width="100%"
           height="800px"
           title="Resume"
