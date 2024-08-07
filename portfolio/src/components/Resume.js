@@ -15,7 +15,7 @@ export default function Resume() {
         </div>
         <div className="text-center">
           <iframe
-            src="/resume.pdf#zoom=150"
+            src="/resumef.pdf#zoom=150"
             width="100%"
             height="800px"
             title="Resume"
