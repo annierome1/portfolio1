@@ -1,10 +1,13 @@
 import { CodeIcon } from "@heroicons/react/solid";
 import React, { useState } from "react";
 import { projects } from "../data";
-import { FaReact, FaGithub, FaUnity, FaVideo } from "react-icons/fa";
+import { FaReact, FaGithub, FaUnity, FaVideo, FaNodeJs } from "react-icons/fa";
 import { FaMeta } from "react-icons/fa6";
 import { SiDjango, SiMysql } from "react-icons/si";
 import { RiTailwindCssFill } from "react-icons/ri";
+import { GrHeroku } from "react-icons/gr";
+import { IoLogoVercel } from "react-icons/io5";
+import { AiOutlineOpenAI } from "react-icons/ai";
 
 // Map icon names to actual icon components
 const iconComponents = {
@@ -13,7 +16,13 @@ const iconComponents = {
   SiMysql: SiMysql,
   FaUnity: FaUnity,
   FaMeta: FaMeta,
+  FaNodeJs: FaNodeJs,
   RiTailwindCssFill: RiTailwindCssFill,
+  GrHeroku: GrHeroku,
+  AiOutlineOpenAI: AiOutlineOpenAI,
+  IoLogoVercel: IoLogoVercel,
+
+
 
 
   // Add other icons as necessary
