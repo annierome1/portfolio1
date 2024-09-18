@@ -72,5 +72,9 @@ export const skills = [
   "Unreal Engine",
   "VR",
   "C++",
+  "Agile",
+  "Node.js",
+  "API Integration",
+  "Postman"
 
 ];
