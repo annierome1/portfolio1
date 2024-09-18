@@ -28,6 +28,23 @@ export const projects = [
   },
 
   {
+    title: "ResuBuild",
+    subtitle: "Resume Builder",
+    github: "https://github.com/annierome1/ResuBuild",
+    description:
+     "Resume Builder provides a real-time preview of your resume as you create it, ensuring a seamless and user-friendly experience. The resume layout is designed based on research into what employers value most—clean, simple, and professional. Additionally, the application integrates OpenAI’s API to automatically generate tailored job descriptions for each role entered, streamlining the resume-building process. ",
+     link: "https://resubuild-cf6518a31dcb.herokuapp.com/",
+     technologies: [
+      { name: "React", icon: "FaReact" },
+      { name:"TailWind", icon: "RiTailwindCssFill" },
+      { name: "OpenAI API", icon: "AiOutlineOpenAI"},
+      { name: "Node.js", icon: "FaNodeJs"},
+      { name: "Heroku", icon: "GrHeroku"}
+     ]
+
+  },
+
+  {
     title: "Portfolio",
     subtitle: "Personal Portfolio Website",
     github: "https://github.com/annierome1/portfolio1",
@@ -35,7 +52,8 @@ export const projects = [
      "This website that I coded in order to showcase my skills, experiences, and projects",
      technologies: [
       { name: "React", icon: "FaReact" },
-      { name:"TailWind", icon: "RiTailwindCssFill" }
+      { name:"TailWind", icon: "RiTailwindCssFill" },
+      { name: "Vercel", icon: "IoLogoVercel"}
      ]
 
   }
