@@ -51,15 +51,16 @@ export default function Projects() {
           <h1 className="sm:text-4xl text-3xl font-medium title-font mb-4 text-purple-100">
             Projects
           </h1>
+      
           <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
             These are all of the projects I have created or been a part of. For a further look into the code of each, check out my GitHub.
           </p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols- gap-4">
           {projects.map((project, index) => (
             <div key={index} className="p-4">
-              <div className="relative flex flex-col items-center">
-                <div className="px-8 py-10 relative w-full border-4 border-gray-800 bg-gray-900">
+              <div className="relative flex flex-col items-center ">
+                <div className="px-8 py-10 relative w-full h-full border-4 border-gray-800 bg-gray-900">
                   {/* Conditional rendering for GitHub or video icon */}
                   {project.github ? (
                     <a
@@ -80,8 +81,8 @@ export default function Projects() {
                       <FaVideo className="text-2xl" />
                     </a>
                   ) : null}
-                  <div className="flex justify-between items-center mb-2">
-                    <h2 className="tracking-widest text-sm title-font font-medium text-gray-200">
+                  <div className="flex justify-center items-center mb-2">
+                    <h2 className=" text-sm title-font font-medium text-gray-200 text-center">
                       {project.subtitle}
                     </h2>
                   </div>

@@ -10,7 +10,7 @@ export default function Resume() {
         <div className="text-center mb-4">
           <div className="tooltip">
             <FaInfoCircle className="text-purple-100 cursor-pointer" />
-            <span className="tooltiptext">This resume was generated with a Resume Builder React App that I created. This app will be showcased on my portfolio once it is finished</span>
+            <span className="tooltiptext">This resume was generated with ResuBuild</span>
           </div>
         </div>
         <div className="text-center">
