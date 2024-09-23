@@ -36,7 +36,6 @@ export const projects = [
     link: "https://resubuild-cf6518a31dcb.herokuapp.com/",
     technologies: [
       { name: "React", icon: "FaReact" },
-      { name:"TailWind", icon: "RiTailwindCssFill" },
       { name: "OpenAI API", icon: "AiOutlineOpenAI"},
       { name: "Node.js", icon: "FaNodeJs"},
       { name: "Heroku", icon: "GrHeroku"}
