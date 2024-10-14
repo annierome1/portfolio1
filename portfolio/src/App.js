@@ -6,19 +6,33 @@ import Navbar from "./components/Navbar";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 import Footer from "./components/Footer";
-import Resume from "./components/Resume"
-
+import Resume from "./components/Resume";
 
 export default function App() {
   return (
-    <main className="text-grey-400 bg-purple-100 body-font">
-      <Navbar />
-      <About />
-      <Projects />
-      <Skills />
-      <Resume />
-      <Contact/>
-      <Footer />
-    </main>
+    <Router>
+      <main className="text-grey-400 bg-purple-100 body-font">
+        <Navbar />
+        <Routes>
+          {/* Main page route */}
+          <Route
+            path="/"
+            element={
+              <>
+                <About />
+                <Skills />
+                
+                <Contact />
+              </>
+            }
+          />
+          
+          {/* Projects page route */}
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/resume" element={<Resume />}/>
+        </Routes>
+        <Footer />
+      </main>
+    </Router>
   );
 }

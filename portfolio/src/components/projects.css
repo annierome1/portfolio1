@@ -1,0 +1,5 @@
+.slider-container {
+    width: 100%;  /* Ensure the slider has enough width */
+    height: auto; /* Adjust to fit content */
+    margin: auto; /* Center the slider */
+  }

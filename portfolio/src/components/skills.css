@@ -1,0 +1,40 @@
+.skill-container {
+  display: flex;               /* Use flexbox to layout the skill items */
+  flex-wrap: wrap;             /* Allow skill items to wrap to multiple rows */
+  justify-content: center;     /* Center the skill items */
+  padding: 20px;               /* Add padding inside the container */
+  margin: 20px auto;           /* Center the container and give it some spacing */  
+  border-radius: 12px;         /* Slightly rounded corners for a polished look */
+  max-width: 800px;            /* Prevent the container from becoming too wide */
+  background-color: #f3e7ff;   /* Light background color for visibility */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+.skill-item {
+  width: 100px;                /* Fixed size for skill icons */
+  height: 100px;
+  border-radius: 50%;          /* Make it a circle */
+  padding: 20px;
+  margin: 10px;                /* Space between skill items */
+  border: 2px solid #f3e7ff ;   /* Border for each skill item */
+  background-color: #1f2937;   /* Dark background */
+  display: flex;               /* Center icon inside the circle */
+  align-items: center;         /* Vertical centering */
+  justify-content: center;     /* Horizontal centering */
+  box-shadow: 0px 10px 29px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-item:hover {
+  transform: translateY(-5px); /* Slight lift effect on hover */
+  box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+}
+
+  .skill-item span {
+    display: none; /* Hide the skill name by default */
+  }
+  
+  .skill-item:hover span {
+    display: block; /* Show the skill name when hovered */
+  }
+  

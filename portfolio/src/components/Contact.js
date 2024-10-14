@@ -12,7 +12,7 @@ export default function Contact() {
           name="contact"
           className="flex flex-col w-full md:py-8 mt-8 md:mt-0 text-center">
           <h2 className="text-gray-800 sm:text-4xl text-3xl mb-1 font-medium title-font">
-            Contact
+            Contact Me
           </h2>
           <div className="mt-8 flex justify-center space-x-4">
             <a href="https://github.com/annierome1" className="text-gray-800 hover:text-gray-400">
