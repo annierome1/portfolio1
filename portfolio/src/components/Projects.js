@@ -1,142 +1,180 @@
 import { CodeIcon } from "@heroicons/react/solid";
-import React, { useState } from "react";
 import { projects } from "../data";
-import { FaReact, FaGithub, FaUnity, FaVideo, FaNodeJs } from "react-icons/fa";
+import { FaReact, FaGithub, FaUnity, FaVideo, FaNodeJs, FaSwift, FaAws } from "react-icons/fa";
 import { FaMeta } from "react-icons/fa6";
-import { SiDjango, SiMysql, SiBlender, SiUnrealengine } from "react-icons/si";
+import { SiDjango, SiMysql, SiBlender, SiUnrealengine, SiMongodb, SiPostman } from "react-icons/si";
+import { VscAzureDevops } from "react-icons/vsc";
 import { RiTailwindCssFill } from "react-icons/ri";
 import { GrHeroku } from "react-icons/gr";
 import { IoLogoVercel } from "react-icons/io5";
 import { AiOutlineOpenAI } from "react-icons/ai";
-
 // Map icon names to actual icon components
+import React, { useState } from "react";
+
 const iconComponents = {
-  FaReact: FaReact,
-  SiDjango: SiDjango,
-  SiMysql: SiMysql,
-  SiBlender: SiBlender,
-  SiUnrealengine: SiUnrealengine,
-  FaUnity: FaUnity,
-  FaMeta: FaMeta,
-  FaNodeJs: FaNodeJs,
-  RiTailwindCssFill: RiTailwindCssFill,
-  GrHeroku: GrHeroku,
-  AiOutlineOpenAI: AiOutlineOpenAI,
-  IoLogoVercel: IoLogoVercel,
+  FaReact,
+  SiDjango,
+  SiMysql,
+  SiBlender,
+  SiUnrealengine,
+  FaUnity,
+  FaMeta,
+  FaSwift,
+  FaNodeJs,
+  RiTailwindCssFill,
+  GrHeroku,
+  AiOutlineOpenAI,
+  IoLogoVercel,
+  FaAws,
+  VscAzureDevops,
+  SiMongodb,
+  SiPostman
 
-
-
-
-  // Add other icons as necessary
 };
 
 const renderIcon = (iconName) => {
   const IconComponent = iconComponents[iconName];
-  return IconComponent ? <IconComponent className="text-3xl mx-2" /> : null;
+  return IconComponent ? <IconComponent className="text-4xl mx-2 text-purple-300" /> : null;
 };
 
 export default function Projects() {
-  const [visibleDropdowns, setVisibleDropdowns] = useState({});
+  const [activeTab, setActiveTab] = useState("completed");
 
-  const toggleDropdown = (index) => {
-    setVisibleDropdowns((prevState) => ({
-      ...prevState,
-      [index]: !prevState[index],
-    }));
-  };
-  
-  const categories = [...new Set(projects.map((project) => project.category))];
+  const completedProjects = projects.filter(
+    (project) => project.status === "completed"
+  );
+  const inDevelopmentProjects = projects.filter(
+    (project) => project.status === "in-development"
+  );
+  const schoolCodeExamples = projects.filter(
+    (project) => project.category === "School"
+  );
 
- 
+  const renderSchoolProject = (project) => (
+    <div
+      key={project.id}
+      className="p-6 bg-gray-800 rounded-lg shadow-lg transform transition-transform hover:scale-105 hover:shadow-2xl flex flex-col justify-between h-full"
+    >
+      {/* Centered Text Section */}
+      <div className="flex flex-grow flex-col justify-center items-center text-center">
+        <h2 className="text-lg font-bold text-purple-100 mb-4">{project.title}</h2>
+        <p className="text-purple-200 text-sm">{project.description}</p>
+      </div>
+      {project.github && (
+        <a
+          href={project.github}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="absolute top-4 right-4 text-purple-400 hover:text-white"
+        >
+          <FaGithub className="text-2xl" />
+        </a>
+      )}
+    </div>
+  );
+
+  const renderProject = (project) => (
+    <div
+      key={project.id}
+      className="p-4 bg-gray-800 rounded-lg shadow-lg flex flex-col justify-between h-full transform transition-transform hover:scale-105 hover:shadow-2xl"
+    >
+      <div>
+        <h2 className="text-lg font-bold text-purple-100">
+          {project.title}
+        </h2>
+        <p className="text-purple-200 text-sm mb-4">
+          {project.description}
+        </p>
+      </div>
+      {project.github && (
+        <a
+          href={project.github}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="absolute top-4 right-4 text-purple-400 hover:text-white"
+        >
+          <FaGithub className="text-2xl" />
+        </a>
+      )}
+      
+      {project.technologies && (
+      <div className="mt-auto p-4 bg-gray-900 rounded-lg flex items-center justify-center">
+      <div className="flex space-x-4">
+        {project.technologies.map((tech, techIndex) => (
+          <div
+            key={techIndex}
+            className="p-2 flex items-center justify-center"
+          >
+            {renderIcon(tech.icon)}
+          </div>
+
+    ))}
+  </div>
+  </div>
+        
+      )}
+      {project.link && (
+        <a
+          href={project.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-purple-400 hover:text-white mt-4 inline-block"
+        >
+          View Project
+        </a>
+      )}
+    </div>
+  );
+
   return (
     <section id="projects" className="text-gray-800 bg-purple-100 body-font">
       <div className="container px-5 py-10 mx-auto text-center lg:px-40">
-        <div className="flex flex-col w-full mb-20">
-          <CodeIcon className="mx-auto inline-block w-10 mb-4" />
-          <h1 className="sm:text-4xl text-3xl font-medium title-font mb-4 text-gray-800">
-            Projects
-          </h1>
-          <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
-            These are all of the projects I have created or been a part of. For a further look into the code of each, check out my GitHub.
-          </p>
+        {/* Tabs for navigation */}
+        <div className="flex justify-center mb-8">
+          <button
+            className={`px-4 py-2 font-bold ${
+              activeTab === "completed" ? "bg-gray-800 text-purple-100" : "bg-purple-100 text-gray-800"
+            } rounded-lg mr-2`}
+            onClick={() => setActiveTab("completed")}
+          >
+            Completed Projects
+          </button>
+          <button
+            className={`px-4 py-2 font-bold ${
+              activeTab === "in-development" ? "bg-gray-800 text-purple-100" : "bg-purple-100 text-gray-800"
+            } rounded-lg mr-2`}
+            onClick={() => setActiveTab("in-development")}
+          >
+            Projects in Development
+          </button>
+          <button
+            className={`px-4 py-2 font-bold ${
+              activeTab === "school" ? "bg-gray-800 text-purple-100" : "bg-purple-100 text-gray-800"
+            } rounded-lg`}
+            onClick={() => setActiveTab("school")}
+          >
+            School Code Examples
+          </button>
         </div>
 
-        {categories.map((category, catIndex) => (
-          <div key={catIndex} className="mb-10">
-            {/* Category Title */}
-            <div className="p-4 bg-gray-800 rounded-lg border border-gray-700">
-              <h2 className="text-2xl font-bold text-purple-100 mb-6">{category}</h2>
-              
-              {/* Box to group category projects */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
-                {projects
-                  .filter((project) => project.category === category)
-                  .map((project, index) => (
-                    <div key={index} className="p-4 bg-gray-800 rounded-lg border border-gray-800">
-                      <div className="relative flex flex-col items-center bg-purple-100 p-6 rounded-lg">
-                        {/* GitHub or Video Link */}
-                        {project.github ? (
-                          <a
-                            href={project.github}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="absolute top-2 right-2 text-gray-800 hover:text-white"
-                          >
-                            <FaGithub className="text-2xl" />
-                          </a>
-                        ) : project.video ? (
-                          <a
-                            href={project.video}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="absolute top-2 right-2 text-gray-800 hover:text-white"
-                          >
-                            <FaVideo className="text-2xl" />
-                          </a>
-                        ) : null}
-
-                        {/* Project Title and Description */}
-                        <div className="flex flex-col items-center mb-4">
-                          <h2 className="text-sm font-medium text-gray-800 mb-2">
-                            {project.subtitle}
-                          </h2>
-                          <h1 className="text-lg font-medium text-gray-800 mb-2">
-                            {project.title}
-                          </h1>
-                          <p className="leading-relaxed text-gray-800">
-                            {project.description}
-                          </p>
-                        </div>
-
-                        {/* Show extended details and technologies */}
-                        <div className="mt-2 w-full bg-gray-800 text-purple-100 p-4 rounded">
-                          {project.link &&(
-                          <a
-                            href={project.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="block mb-2 text-purple-100"
-                          >
-                            View Project
-                          </a>
-                          )}
-                          <p>{project.extendedDescription}</p>
-                          <div className="flex justify-center mt-4">
-                            {project.technologies &&
-                              project.technologies.map((tech, techIndex) => (
-                                <div key={techIndex} className="text-3xl mx-2">
-                                  {renderIcon(tech.icon)}
-                                </div>
-                              ))}
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-              </div>
-            </div>
+        {/* Content based on active tab */}
+        {activeTab === "completed" && (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {completedProjects.map((project) => renderProject(project))}
           </div>
-        ))}
+        )}
+
+        {activeTab === "in-development" && (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {inDevelopmentProjects.map((project) => renderProject(project))}
+          </div>
+        )}
+
+        {activeTab === "school" && (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {schoolCodeExamples.map((project) => renderSchoolProject(project))}
+          </div>
+        )}
       </div>
     </section>
   );

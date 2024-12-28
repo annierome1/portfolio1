@@ -1,0 +1,28 @@
+/* App.css */
+html, body {
+    height: 100%;
+    margin: 0;
+    background-color: #f3e7ff; /* Change this to your desired color */
+    color: #333; /* Ensuring text color contrast */
+  }
+  
+  #root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  footer {
+    background-color: #4b5563; /* Dark gray */
+    color: #d1d5db; /* Light gray text */
+    padding: 1rem 0;
+    text-align: center;
+    width: 100%;
+  }
+  

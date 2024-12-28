@@ -2,6 +2,7 @@ export const projects = [
   {
     title: "Glazier Children's Museum",
     subtitle: "Full-Stack Web Application",
+    status: "completed",
     category: "Full-Stack",
     github: "https://github.com/annierome1/FINAL_PROJECT",
     description:
@@ -17,6 +18,7 @@ export const projects = [
   {
     title: "A Way Home",
     subtitle: "VR Game created with Unity",
+    status: "completed",
     category: "3D Development",
     description:
       "This game was created in hopes of eductaing users on the United Nation's Convention of the Right's of the Child through game-based learning.",
@@ -32,6 +34,7 @@ export const projects = [
   {
     title: "ResuBuild",
     subtitle: "Full-Stack Resume Builder utilizing OpenAI's API",
+    status: "completed",
     category: "Full-Stack",
     github: "https://github.com/annierome1/ResuBuild",
     description:
@@ -50,6 +53,7 @@ export const projects = [
     title: "Portfolio",
     subtitle: "Personal Portfolio Website",
     category: "Personal",
+    status: "completed",
     github: "https://github.com/annierome1/portfolio1",
     description:
      "This website that I coded in order to showcase my skills, experiences, and projects.",
@@ -60,12 +64,55 @@ export const projects = [
      ]
 
   },
+  {
+    title: "UTampa App",
+    subtitle: "Senior Capstone project",
+    status: "in-development",
+    description: "UTampa is a multifunctional mobile app created for the University of Tampa community. As a senior Capstone project by the Computer Science program, this app will be ready by May 2025. Users can look forward to features like parking monitoring, a centralized news platform, and a range of tools to improve daily campus life.",
+    technologies: [
+      {name: "Swift", icon: "FaSwift"},
+      { name: "AWS", icon: "FaAws"},
+      { name: "AzureDevOps", icon: "VscAzureDevops"},
+
+    ]
+  },
+
+  {
+    title: "SmartBet",
+    subtitle: "Machine Learning Parlay Constrcutor",
+    category: "Personal",
+    status: "in-development",
+    description: "I’m developing a probabilistic machine learning model to predict the success rates of NFL sports bets, including parlays and player prop bets. Using a MongoDB database integrated with real-time data from SportsRadar and SportsBetOdds APIs, I analyze historical and game-level stats to provide data-driven insights for betting strategies",
+    technologies: [
+      { name: "MongoDB", icon: "SiMongodb"},
+      { name: "Postman", icon: "SiPostman"},
+      { name: ""}
+    ]
+
+
+  },
+
+  {
+    id: 1,
+    title: "SciFiLi",
+    description: "A program that utilizes binary trees, linked lists, and priority queues to create a book library based on books read from a text file",
+    category: "School",
+    github: "https://github.com/annierome1/SciFILi"
+  },
+
+  {
+    id: 2,
+    title: "AI Game Player",
+    description: ""
+
+  },
 
   {
     title: "Vermont Farm House",
     subtitle: "Unreal Engine Architecture Visualization",
+    status: "completed",
     category: "3D Development",
-    video: "https://www.dropbox.com/scl/fi/yo0t7w6we9tzs3cm4qqi2/FarmHouse.mp4?rlkey=z4j0wr3looxoqp4g3ddrvbhp0&st=wc14fvbw&dl=0",
+    link: "https://www.dropbox.com/scl/fi/yo0t7w6we9tzs3cm4qqi2/FarmHouse.mp4?rlkey=z4j0wr3looxoqp4g3ddrvbhp0&st=wc14fvbw&dl=0",
     description:
      "This project presents a modern farmhouse set in the heart of New England, a dream house for me. Created using Unreal Engine, with additional design elements created in TwinMotion and Blender,",
      technologies: [
@@ -80,7 +127,7 @@ export const projects = [
 
 export const skills = {
   Languages: ["JavaScript", "Python", "Java", "C++", "HTML", "CSS", "Swift"],
-  Frameworks: ["React", "Django", "Unreal Engine", "Unity", "Blender"],
-  Tools: ["MySQL", "Postgres", "Node.js", "Postman", "VR", "Git"]
+  Frameworks: ["React", "Django", "Unreal Engine", "Unity", "Blender", "AWS"],
+  Tools: ["MySQL", "Postgres", "Node.js", "Postman", "VR", "Git", "MongoDB" ]
 };
 

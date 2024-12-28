@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import { BadgeCheckIcon, ChipIcon } from "@heroicons/react/solid";
 import { skills } from "../data"; // Import your skills data
 import './skills.css';
-import { SiPython, SiCplusplus, SiReact, SiDjango, SiUnrealengine, SiUnity, SiPostman, SiGit, SiBlender, SiMysql, SiPostgresql } from "react-icons/si"; // Import icons
+import { SiPython, SiCplusplus, SiReact, SiDjango, SiUnrealengine, SiUnity, SiPostman, SiGit, SiBlender, SiMysql, SiPostgresql, SiMongodb} from "react-icons/si"; // Import icons
 import { IoLogoJavascript } from "react-icons/io5";
-import { FaNodeJs, FaJava, FaSwift, FaHtml5, FaCss3Alt, FaVrCardboard,   } from "react-icons/fa";
+import { VscAzureDevops } from "react-icons/vsc";
+import { FaNodeJs, FaJava, FaSwift, FaHtml5, FaCss3Alt, FaVrCardboard, FaAws  } from "react-icons/fa";
 
 // Map the skills to their corresponding icons
 const skillIcons = {
@@ -25,7 +26,11 @@ const skillIcons = {
   Postgres: <SiPostgresql className="text-blue-500 w-10 h-10" />, // PostgreSQL has a blue elephant logo
   "Node.js": <FaNodeJs className="text-green-500 w-10 h-10" />, // Node.js uses a brighter green
   Git: <SiGit className="text-orange-600 w-10 h-10" />, // Git logo is officially orange
-  VR: <FaVrCardboard className="text-orange-600 w-10 h-10" />, // VR logos (especially for Cardboard) are typically orange
+  VR: <FaVrCardboard className="text-orange-600 w-10 h-10" />,
+  AzureDevOPs: <VscAzureDevops className  = "text-blue-500 w-10 h-10" /> ,
+  MongoDB: <SiMongodb className = "text-green-500 w-10 h-10" />,
+  AWS: <FaAws className = "text-blue-500 w-10 h-10" />
+    
 };
 
 

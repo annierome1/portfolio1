@@ -7,32 +7,34 @@ import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 import Footer from "./components/Footer";
 import Resume from "./components/Resume";
+import './App.css'; // Import your CSS file here
 
 export default function App() {
   return (
     <Router>
-      <main className="text-grey-400 bg-purple-100 body-font">
+      <div id="root">
         <Navbar />
-        <Routes>
-          {/* Main page route */}
-          <Route
-            path="/"
-            element={
-              <>
-                <About />
-                <Skills />
-                
-                <Contact />
-              </>
-            }
-          />
-          
-          {/* Projects page route */}
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/resume" element={<Resume />}/>
-        </Routes>
+        <main className="main-content">
+          <Routes>
+            {/* Main page route */}
+            <Route
+              path="/"
+              element={
+                <>
+                  <About />
+                  <Skills />
+                  <Contact />
+                </>
+              }
+            />
+            
+            {/* Projects page route */}
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/resume" element={<Resume />} />
+          </Routes>
+        </main>
         <Footer />
-      </main>
+      </div>
     </Router>
   );
 }
