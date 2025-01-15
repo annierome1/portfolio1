@@ -130,7 +130,7 @@ export default function Projects() {
 
   return (
     <section id="projects" className="text-gray-800 bg-purple-100 body-font">
-      <div className="container px-10 py-10 mx-auto text-center lg:px-40">
+      <div className="container px-4 py-10 mx-auto text-center lg:px-20">
         {/* Tabs for navigation */}
         <div className="flex justify-center mb-8">
           <button
@@ -161,9 +161,10 @@ export default function Projects() {
 
         {/* Content based on active tab */}
         {activeTab === "completed" && (
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-6">
-            {completedProjects.map((project) => renderProject(project))}
-          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {completedProjects.map((project) => renderProject(project))}
+        </div>
+        
         )}
 
         {activeTab === "in-development" && (
