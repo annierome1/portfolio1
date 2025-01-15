@@ -97,14 +97,29 @@ export const projects = [
     title: "SciFiLi",
     description: "A program that utilizes binary trees, linked lists, and priority queues to create a book library based on books read from a text file",
     category: "School",
-    github: "https://github.com/annierome1/SciFILi"
+    github: "https://github.com/annierome1/SciFILi",
+    technologies: [
+      {name: "Python", icon: "SiPython"}
+    ]
   },
+
+  
 
   {
     id: 2,
     title: "AI Game Player",
     description: ""
 
+  },
+  {
+    id: 3,
+    title: "Advanced Data Structures",
+    description:"A combination of data structres and algorithms",
+    category: "School",
+    github: "https://github.com/annierome1/DataStructures",
+    technologies: [
+      {name: "Java", icon: "FaJava"}
+    ]
   },
 
   {

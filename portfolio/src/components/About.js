@@ -8,7 +8,7 @@ export default function About() {
           <h1 className="text-4xl font-bold text-gray-800 mb-4">Hello!</h1>
           <p className="text-gray-700 text-lg leading-relaxed">
           
-              I'm a dual B.S. candidate in  <span className="font-bold text-gray-800">Computer Science</span> and <span className="font-bold text-gray-800"> Psychology</span> at the <span className="font-bold text-gray-800">University of Tampa </span>, passionate about blending technology and human understanding to drive innovation. With expertise in <span className="font-bold text-gray-800">programming, software development, </span> and <span className="font-bold text-gray-800">data analysis</span>, alongside insights into human behavior, I aim to contribute to forward-thinking projects that improve lives and push technological boundaries
+              I'm a dual B.S. candidate in  <span className="font-bold text-gray-800">Computer Science</span> and <span className="font-bold text-gray-800"> Psychology</span> at the <span className="font-bold text-gray-800">University of Tampa </span>, passionate about blending technology and human understanding to drive innovation. With expertise in <span className="font-bold text-gray-800">programming, software development, </span> and <span className="font-bold text-gray-800">data analysis</span>, alongside insights into human behavior, I aim to contribute to forward-thinking projects that improve lives and push technological boundaries.
           </p>
 
         </div>

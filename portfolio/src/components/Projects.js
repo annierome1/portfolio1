@@ -1,8 +1,8 @@
 import { CodeIcon } from "@heroicons/react/solid";
 import { projects } from "../data";
-import { FaReact, FaGithub, FaUnity, FaVideo, FaNodeJs, FaSwift, FaAws } from "react-icons/fa";
+import { FaReact, FaGithub, FaUnity, FaVideo, FaNodeJs, FaSwift, FaAws, FaJava } from "react-icons/fa";
 import { FaMeta } from "react-icons/fa6";
-import { SiDjango, SiMysql, SiBlender, SiUnrealengine, SiMongodb, SiPostman } from "react-icons/si";
+import { SiDjango, SiMysql, SiBlender, SiUnrealengine, SiMongodb, SiPostman, SiPython } from "react-icons/si";
 import { VscAzureDevops } from "react-icons/vsc";
 import { RiTailwindCssFill } from "react-icons/ri";
 import { GrHeroku } from "react-icons/gr";
@@ -28,7 +28,9 @@ const iconComponents = {
   FaAws,
   VscAzureDevops,
   SiMongodb,
-  SiPostman
+  SiPostman, 
+  FaJava,
+  SiPython
 
 };
 
@@ -128,7 +130,7 @@ export default function Projects() {
 
   return (
     <section id="projects" className="text-gray-800 bg-purple-100 body-font">
-      <div className="container px-5 py-10 mx-auto text-center lg:px-40">
+      <div className="container px-10 py-10 mx-auto text-center lg:px-40">
         {/* Tabs for navigation */}
         <div className="flex justify-center mb-8">
           <button
