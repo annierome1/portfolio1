@@ -44,7 +44,6 @@ export const projects = [
       { name: "React", icon: "FaReact" },
       { name: "OpenAI API", icon: "AiOutlineOpenAI"},
       { name: "Node.js", icon: "FaNodeJs"},
-      { name: "Heroku", icon: "GrHeroku"},
       { name: "MongoDB", icon: "SiMongodb"}
      ]
 
