@@ -38,13 +38,14 @@ export const projects = [
     category: "Full-Stack",
     github: "https://github.com/annierome1/ResuBuild",
     description:
-     "Resume Builder provides a real-time preview of your resume as you create it, ensuring a seamless and user-friendly experience. The resume layout is designed based on research into what employers value most—clean, simple, and professional. Additionally, the application integrates OpenAI’s API to automatically generate tailored job descriptions for each role entered, streamlining the resume-building process. ",
-    link: "https://resubuild-cf6518a31dcb.herokuapp.com/",
+     "Resume Builder provides a real-time preview of your resume as you create it, ensuring a seamless and user-friendly experience. The resume layout is designed based on research into what employers value most—clean, simple, and professional. Additionally, the application integrates OpenAI’s API to automatically generate tailored job descriptions for each role entered. Signup to save your progress!",
+    link: "https://resumebuild-prd-9d487f141016.herokuapp.com/",
     technologies: [
       { name: "React", icon: "FaReact" },
       { name: "OpenAI API", icon: "AiOutlineOpenAI"},
       { name: "Node.js", icon: "FaNodeJs"},
-      { name: "Heroku", icon: "GrHeroku"}
+      { name: "Heroku", icon: "GrHeroku"},
+      { name: "MongoDB", icon: "SiMongodb"}
      ]
 
   },
