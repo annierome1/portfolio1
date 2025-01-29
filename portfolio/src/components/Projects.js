@@ -155,7 +155,7 @@ export default function Projects() {
             } rounded-lg`}
             onClick={() => setActiveTab("school")}
           >
-            School Code Examples
+            School Projects
           </button>
         </div>
 

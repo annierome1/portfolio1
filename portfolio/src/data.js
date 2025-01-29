@@ -108,8 +108,12 @@ export const projects = [
   {
     id: 2,
     title: "AI Game Player",
-    description: ""
-
+    description: "For my AI/ML class, I was tasked with developing an AI player for the game Prudh. The professor provided us with a GameEngine, Main, and GameRules, and our objective was to create an intelligent agent that would later compete against other students' AI players. I chose to implement both a MiniMax player and an optimized Monte Carlo player.",
+    category: "School",
+    github: "https://github.com/annierome1/AI_Game_Players",
+    technologies: [
+      {name: "Python", icon: "SiPython"}
+    ]
   },
   {
     id: 3,
