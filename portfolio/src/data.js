@@ -145,8 +145,33 @@ export const projects = [
 
 
 export const skills = {
-  Languages: ["JavaScript", "Python", "Java", "C++", "HTML", "CSS", "Swift"],
-  Frameworks: ["React", "Django", "Unreal Engine", "Unity", "Blender", "AWS"],
-  Tools: ["MySQL", "Postgres", "Node.js", "Postman", "VR", "Git", "MongoDB" ]
+  Languages: [
+    { name: "JavaScript", level: 70 },
+    { name: "Python", level: 90 },
+    { name: "Java", level: 70 },
+    { name: "Swift", level: 50 },
+  ],
+  Frontend: [
+    { name: "React", level: 80 },
+    { name: "HTML", level: 90 },
+    { name: "CSS", level: 90 },
+  ],
+  Backend: [
+    { name: "Node.js", level: 50 },
+    { name: "MySQL", level: 50},
+    { name: "Django", level: 50},
+    { name: "PostgreSQL", level: 50 },
+    { name: "MongoDB", level: 60 },
+  ],
+  DevOps: [
+    { name: "AWS", level: 50 },
+    { name: "AzureDevOps", level: 70 },
+    { name: "Git", level: 80 },
+  ],
+  GameDevelopment: [
+    { name: "Unreal Engine", level: 60 },
+    { name: "Unity", level: 60 },
+    { name: "Blender", level: 30 },
+  ],
 };
 
