@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaInfoCircle } from 'react-icons/fa';
+import { FaInfoCircle, FaDownload } from 'react-icons/fa';
 import './Resume.css'; // Ensure this CSS file is in the same directory as Resume.js
 
 export default function Resume() {
@@ -12,6 +12,16 @@ export default function Resume() {
             <FaInfoCircle className="text-gray-800 cursor-pointer" />
             <span className="tooltiptext">This resume was generated with ResuBuild</span>
           </div>
+        </div>
+                {/* Download Resume Button */}
+        <div className="text-center mb-6">
+          <a
+            href="/Annie_Rome.pdf"
+            download="Annie_Rome_Resume.pdf"
+            className="inline-flex items-center px-3 py-3 bg-gray-700 text-white font-semibold rounded-lg shadow-md hover:bg-gray-900 transition duration-300">
+            <FaDownload className="mr-2" />
+            Download Resume
+          </a>
         </div>
         <div className="text-center">
           <iframe
