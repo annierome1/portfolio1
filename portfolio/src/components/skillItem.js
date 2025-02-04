@@ -1,21 +1,7 @@
 import React, { useState } from "react";
 import skillIcons from "./skillIcons"; // Import skill icons
 
-// Function to determine aura color based on skill level
-const getAuraColor = (level) => {
-  if (level <= 40) return "shadow-red-400"; // Beginner (Red Glow)
-  if (level <= 75) return "shadow-yellow-400"; // Proficient (Yellow Glow)
-  return "shadow-green-400"; // Master (Green Glow)
-};
-
-// Function to determine aura intensity
-const getAuraSize = (level) => {
-  if (level <= 40) return "shadow-md"; // Beginner (Soft Glow)
-  if (level <= 75) return "shadow-lg"; // Proficient (Medium Glow)
-  return "shadow-xl"; // Master (Strong Glow)
-};
-
-export default function SkillItem({ skillName, skillLevel }) {
+export default function SkillItem({ skillName }) {
   const [isHovered, setIsHovered] = useState(false);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
@@ -29,11 +15,10 @@ export default function SkillItem({ skillName, skillLevel }) {
       onMouseMove={(e) => setMousePos({ x: e.clientX, y: e.clientY })}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {/* Skill Icon with Aura Effect */}
+      {/* Skill Icon without Glow */}
       <div
-        className={`relative w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center rounded-full 
-        bg-gray-700 shadow-lg transition-all duration-300 ease-in-out
-        ${isHovered ? `${getAuraColor(skillLevel)} ${getAuraSize(skillLevel)}` : ""}`}
+        className="w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center rounded-full 
+        bg-gray-700 transition-all duration-300 ease-in-out"
       >
         {skillIcons[skillName] || <span className="text-white">{skillName}</span>}
       </div>
