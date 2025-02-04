@@ -15,13 +15,16 @@ export default function SkillItem({ skillName }) {
       onMouseMove={(e) => setMousePos({ x: e.clientX, y: e.clientY })}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {/* Skill Icon without Glow */}
+      {/* Skill Icon*/}
       <div
-        className="w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center rounded-full 
-        bg-gray-700 transition-all duration-300 ease-in-out"
-      >
+        className={`w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center rounded-full 
+        bg-gray-700 transition-all duration-300 ease-in-out ${
+            isHovered ? "shadow-[0_0_20px_rgba(255,255,255,0.8)]" : ""
+        }`}
+        >
         {skillIcons[skillName] || <span className="text-white">{skillName}</span>}
-      </div>
+    </div>
+
 
       {/* Skill Name Tooltip (Follows Cursor) */}
       {isHovered && (
