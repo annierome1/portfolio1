@@ -26,7 +26,8 @@ const skillIcons = {
   AzureDevOps: <VscAzureDevops className="text-blue-500 w-12 h-12" />,
   MongoDB: <SiMongodb className="text-green-500 w-12 h-12" />,
   AWS: <FaAws className="text-blue-500 w-12 h-12" />,
-  Postman: <SiPostman className="text-orange-500 w-12 h-12"/>
+  Postman: <SiPostman className="text-orange-500 w-12 h-12"/>,
+  
 };
 
 export default skillIcons;

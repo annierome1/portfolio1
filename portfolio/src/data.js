@@ -38,7 +38,7 @@ export const projects = [
     category: "Full-Stack",
     github: "https://github.com/annierome1/ResuBuild",
     description:
-     "Resume Builder provides a real-time preview of your resume as you create it, ensuring a seamless and user-friendly experience. The resume layout is designed based on research into what employers value most—clean, simple, and professional. Additionally, the application integrates OpenAI’s API to automatically generate tailored job descriptions for each role entered. Signup to save your progress!",
+     "Resume Builder offers a seamless and user-friendly experience by providing a real-time preview of your resume as you create it. Users can sign up to save their progress and return later to make updates. Additionally, the platform features a custom cover letter generator powered by the OpenAI API. By inputting the job description, the system creates a personalized cover letter tailored to the selected resume, helping users craft compelling applications effortlessly",
     link: "https://resumebuild-prd-9d487f141016.herokuapp.com/",
     technologies: [
       { name: "React", icon: "FaReact" },
@@ -126,20 +126,7 @@ export const projects = [
     ]
   },
 
-  {
-    title: "Vermont Farm House",
-    subtitle: "Unreal Engine Architecture Visualization",
-    status: "completed",
-    category: "3D Development",
-    link: "https://www.dropbox.com/scl/fi/yo0t7w6we9tzs3cm4qqi2/FarmHouse.mp4?rlkey=z4j0wr3looxoqp4g3ddrvbhp0&st=wc14fvbw&dl=0",
-    description:
-     "This project presents a modern farmhouse set in the heart of New England, a dream house for me. Created using Unreal Engine, with additional design elements created in TwinMotion and Blender,",
-     technologies: [
-      { name: "Unreal Engine", icon: "SiUnrealengine" },
-      { name: "Blender", icon: "SiBlender"}
-     ]
 
-  }
 ];
 
 
@@ -150,11 +137,14 @@ export const skills = {
     { name: "Python"},
     { name: "Java"},
     { name: "Swift"},
+    { name: "C++"},
+  
   ],
   Frontend: [
     { name: "React"},
     { name: "HTML"},
     { name: "CSS"},
+    
   ],
   Backend: [
     { name: "Node.js"},
@@ -162,16 +152,8 @@ export const skills = {
     { name: "Django"},
     { name: "PostgreSQL"},
     { name: "MongoDB"},
+    { name: "Postman"},
   ],
-  DevOps: [
-    { name: "AWS"},
-    { name: "AzureDevOps"},
-    { name: "Git"},
-  ],
-  GameDevelopment: [
-    { name: "Unreal Engine"},
-    { name: "Unity"},
-    { name: "Blender"},
-  ],
+  
 };
 
