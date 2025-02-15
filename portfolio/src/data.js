@@ -1,5 +1,23 @@
 export const projects = [
   {
+    title: "ResuBuild",
+    subtitle: "Full-Stack Resume Builder utilizing OpenAI's API",
+    status: "completed",
+    category: "Full-Stack",
+    github: "https://github.com/annierome1/ResuBuild",
+    description:
+     "Resume Builder offers a seamless and user-friendly experience by providing a real-time preview of your resume as you create it. Users can sign up to save their progress and return later to make updates. Additionally, the platform features a custom cover letter generator powered by the OpenAI API. By inputting the job description, the system creates a personalized cover letter tailored to the selected resume, helping users craft compelling applications effortlessly",
+    link: "https://resumebuild-prd-9d487f141016.herokuapp.com/",
+    technologies: [
+      { name: "React", icon: "FaReact" },
+      { name: "OpenAI API", icon: "AiOutlineOpenAI"},
+      { name: "Node.js", icon: "FaNodeJs"},
+      { name: "MongoDB", icon: "SiMongodb"}
+     ]
+
+  },
+  
+  {
     title: "Glazier Children's Museum",
     subtitle: "Full-Stack Web Application",
     status: "completed",
@@ -31,23 +49,7 @@ export const projects = [
     ]
   },
 
-  {
-    title: "ResuBuild",
-    subtitle: "Full-Stack Resume Builder utilizing OpenAI's API",
-    status: "completed",
-    category: "Full-Stack",
-    github: "https://github.com/annierome1/ResuBuild",
-    description:
-     "Resume Builder offers a seamless and user-friendly experience by providing a real-time preview of your resume as you create it. Users can sign up to save their progress and return later to make updates. Additionally, the platform features a custom cover letter generator powered by the OpenAI API. By inputting the job description, the system creates a personalized cover letter tailored to the selected resume, helping users craft compelling applications effortlessly",
-    link: "https://resumebuild-prd-9d487f141016.herokuapp.com/",
-    technologies: [
-      { name: "React", icon: "FaReact" },
-      { name: "OpenAI API", icon: "AiOutlineOpenAI"},
-      { name: "Node.js", icon: "FaNodeJs"},
-      { name: "MongoDB", icon: "SiMongodb"}
-     ]
-
-  },
+  
 
   {
     title: "Portfolio",
