@@ -146,6 +146,7 @@ export const skills = {
     { name: "React"},
     { name: "HTML"},
     { name: "CSS"},
+    { name: "Tailwind"},
     
   ],
   Backend: [
@@ -155,6 +156,7 @@ export const skills = {
     { name: "PostgreSQL"},
     { name: "MongoDB"},
     { name: "Postman"},
+    { name: "Pinecone"},
   ],
   
 };

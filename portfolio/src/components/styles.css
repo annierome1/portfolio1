@@ -1,0 +1,18 @@
+.glass-effect {
+    border-radius: 10%; /* Makes the image circular */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Soft glow */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+  
+  .glass-effect:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+  }
+  
+/*
+  body {
+    background: linear-gradient(to bottom right, #1e1e2f, #3a3a55);
+    color: white;
+    font-family: 'Inter', sans-serif;
+  }
+  */

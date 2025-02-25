@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 
 export default function Navbar() {
   return (
-    <header className="bg-gray-700 md:sticky top-0 z-10">
+    <header className="bg-gray-800 md:sticky top-0 z-10">
       <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-        <a className="title-font font-medium text-purple-100 mb-4 md:mb-0">
+        <a className="title-font font- text-purple-100 mb-4 md:mb-0">
           <Link to="/" className="ml-3 text-xl">
             Annie Rome
           </Link>
@@ -21,7 +21,8 @@ export default function Navbar() {
         </nav>
         <a
           href="#contact"
-          className="inline-flex items-center bg-purple-100 border-0 py-1 px-3 focus:outline-none hover:bg-white rounded text-base mt-4 md:mt-0">
+          className="hidden md:flex items-center bg-purple-100  text-gray-800 font-medium py-2 px-6 rounded-full hover:scale-105 transition duration-300 shadow-lg">
+
           Contact Me
           <ArrowRightIcon className="w-4 h-4 ml-1" />
         </a>

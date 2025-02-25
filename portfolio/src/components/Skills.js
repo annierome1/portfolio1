@@ -15,7 +15,7 @@ export default function Skills() {
       <div className="container px-5 mx-auto">
         {/* Section Title */}
         <div className="mb-10">
-          <ChipIcon className="w-10 mx-auto mb-4 text-purple-300" />
+          <ChipIcon className="w-10 mx-auto mb-4 text-purple-100" />
           <div className="tooltip">
             {/*
             <FaInfoCircle className="text-gray-800 cursor-pointer" />
@@ -24,7 +24,7 @@ export default function Skills() {
               </span>
             */}
            </div>
-          <h1 className="sm:text-4xl text-3xl font-medium title-font text-white">
+          <h1 className="sm:text-4xl text-3xl font-medium title-font text-purple-100">
             Tech Stack & Skills
           </h1>
         </div>
@@ -37,7 +37,7 @@ export default function Skills() {
               onClick={() => setSelectedCategory(category)}
               className={`px-5 py-2 font-medium rounded-lg ${
                 selectedCategory === category
-                  ? "bg-purple-200 text-gray-600"
+                  ? "bg-purple-100 text-gray-800"
                   : "bg-gray-700 text-gray-300 hover:bg-gray-500"
               }`}
             >
@@ -53,7 +53,6 @@ export default function Skills() {
             <SkillItem
               key={`${selectedCategory}-${index}`}
               skillName={skill.name}
-              skillLevel={skill.level} // Pass level from data.js
             />
           ))}
         </div>
