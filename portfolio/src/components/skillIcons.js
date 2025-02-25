@@ -1,7 +1,7 @@
-import { SiPython, SiCplusplus, SiReact, SiDjango, SiUnrealengine, SiUnity, SiPostman, SiGit, SiBlender, SiMysql, SiPostgresql, SiMongodb } from "react-icons/si";
+import { SiPython, SiCplusplus, SiReact, SiDjango, SiUnrealengine, SiUnity, SiPostman, SiGit, SiBlender, SiMysql, SiPostgresql, SiMongodb, SiFastapi } from "react-icons/si";
 import { IoLogoJavascript } from "react-icons/io5";
 import { VscAzureDevops } from "react-icons/vsc";
-import { FaNodeJs, FaJava, FaSwift, FaHtml5, FaCss3Alt, FaVrCardboard, FaAws } from "react-icons/fa";
+import { FaNodeJs, FaJava, FaSwift, FaHtml5, FaCss3Alt, FaVrCardboard, FaAws,  } from "react-icons/fa";
 import { RiTailwindCssFill } from "react-icons/ri";
 import { ReactSVG } from 'react-svg';
 import React from 'react';
@@ -31,7 +31,8 @@ const skillIcons = {
   AWS: <FaAws className="text-blue-500 w-12 h-12" />,
   Postman: <SiPostman className="text-orange-500 w-12 h-12"/>,
   Pinecone: <img src="/pinecone-icon-seeklogo.svg" className=" w-12 h-12"/>,
-  Tailwind: <RiTailwindCssFill className="text-[rgb(15,188,245)] w-12 h-12"/>
+  Tailwind: <RiTailwindCssFill className="text-[rgb(15,188,245)] w-12 h-12"/>,
+  FastAPI: <SiFastapi  className="text-gray-500 w-12 h-12"/>,
   
 };
 

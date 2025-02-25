@@ -67,6 +67,22 @@ export const projects = [
 
   },
   {
+    title: "ChatBot",
+    subtitle: "Personal Chatbot for Website",
+    category: "Personal",
+    status: "completed",
+    github: "https://github.com/annierome1/ChatBotAnnie",
+    description: "Built with OpenAI's API and a Pinecone vector database, this chatbot enhances user interaction by providing intelligent, context-aware responses. Running on a Python and FastAPI backend, it showcases my skills in AI development, natural language processing, and backend engineering. Try it out and explore how AI can make conversations smarter!",
+    technologies: [
+      { name: "Python", icon: "SiPython"},
+      { name: "Pinecone", icon: "public/pinecone-icon-seeklogo.svg"},
+      { name: "FastAPI", icon: "SiFastapi"},
+      { name: "OpenAI", icon: "AiOutlineOpenAI"},
+
+    ]
+
+  },
+  {
     title: "UTampa App",
     subtitle: "Senior Capstone project",
     status: "in-development",
@@ -157,6 +173,7 @@ export const skills = {
     { name: "MongoDB"},
     { name: "Postman"},
     { name: "Pinecone"},
+    { name: "FastAPI"}
   ],
   
 };

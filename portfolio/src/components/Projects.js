@@ -2,14 +2,33 @@ import { CodeIcon } from "@heroicons/react/solid";
 import { projects } from "../data";
 import { FaReact, FaGithub, FaUnity, FaVideo, FaNodeJs, FaSwift, FaAws, FaJava } from "react-icons/fa";
 import { FaMeta } from "react-icons/fa6";
-import { SiDjango, SiMysql, SiBlender, SiUnrealengine, SiMongodb, SiPostman, SiPython } from "react-icons/si";
+import { SiDjango, SiMysql, SiBlender, SiUnrealengine, SiMongodb, SiPostman, SiPython, SiFastapi } from "react-icons/si";
 import { VscAzureDevops } from "react-icons/vsc";
 import { RiTailwindCssFill } from "react-icons/ri";
 import { GrHeroku } from "react-icons/gr";
 import { IoLogoVercel } from "react-icons/io5";
 import { AiOutlineOpenAI } from "react-icons/ai";
 // Map icon names to actual icon components
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
+
+const DynamicText = ({ text }) => {
+  const [fontSize, setFontSize] = useState("text-lg"); // Default size
+  const textRef = useRef(null);
+  useEffect(() => {
+    if (textRef.current) {
+      const length = text.length;
+      if (length > 200) setFontSize("text-sm");
+      else if (length > 100) setFontSize("text-base");
+      else setFontSize("text-lg");
+    }
+  }, [text]);
+  return (
+    <p ref={textRef} className={`text-purple-200 ${fontSize} text-center leading-snug`}>
+      {text}
+    </p>
+  );
+};
+
 
 const iconComponents = {
   FaReact,
@@ -30,13 +49,14 @@ const iconComponents = {
   SiMongodb,
   SiPostman, 
   FaJava,
-  SiPython
+  SiPython,
+  SiFastapi
 
 };
 
 const renderIcon = (iconName) => {
   const IconComponent = iconComponents[iconName];
-  return IconComponent ? <IconComponent className="text-4xl mx-2 text-purple-300" /> : null;
+  return IconComponent ? <IconComponent className="text-4xl mx-2 text-purple-200" /> : null;
 };
 
 export default function Projects() {
@@ -55,19 +75,19 @@ export default function Projects() {
   const renderSchoolProject = (project) => (
     <div
       key={project.id}
-      className="p-6 bg-gray-800 rounded-lg shadow-lg transform transition-transform hover:scale-105 hover:shadow-2xl flex flex-col justify-between h-full"
+      className="p-6 bg-gray-800 rounded-lg shadow-lg transform transition-transform hover:scale-105 hover:shadow-2xl flex flex-col justify-between h-full min-h-[250px]"
     >
       {/* Centered Text Section */}
       <div className="flex flex-grow flex-col justify-center items-center text-center">
         <h2 className="text-lg font-bold text-purple-100 mb-4">{project.title}</h2>
-        <p className="text-purple-200 text-sm">{project.description}</p>
+        <DynamicText text ={project.description}/>
       </div>
       {project.github && (
         <a
           href={project.github}
           target="_blank"
           rel="noopener noreferrer"
-          className="absolute top-4 right-4 text-purple-400 hover:text-white"
+          className="absolute top-4 right-4 text-purple-300 hover:text-white"
         >
           <FaGithub className="text-2xl" />
         </a>
@@ -78,42 +98,41 @@ export default function Projects() {
   const renderProject = (project) => (
     <div
       key={project.id}
-      className="p-4 bg-gray-800 rounded-lg shadow-lg flex flex-col justify-between h-full transform transition-transform hover:scale-105 hover:shadow-2xl"
+      className="p-4 bg-gray-800 rounded-lg shadow-lg flex flex-col justify-between h-full min-h-[350px] transform transition-transform hover:scale-105 hover:shadow-2xl"
     >
+      {/* Title & Header Section - Stays at the Top */}
       <div>
-        <h2 className="text-lg font-bold text-purple-100">
-          {project.title}
-        </h2>
-        <p className="text-purple-200 text-sm mb-4">
-          {project.description}
-        </p>
+        <h2 className="text-lg font-bold text-purple-100">{project.title}</h2>
       </div>
+  
+      {/* Centered Description Section */}
+      <div className="flex-grow flex items-center justify-center text-center">
+        <DynamicText text ={project.description}/>
+      </div>
+  
+      {/* Technologies Section */}
+      {project.technologies && (
+        <div className="mt-auto p-4 bg-gray-900 rounded-lg flex items-center justify-center">
+          <div className="flex space-x-4">
+            {project.technologies.map((tech, techIndex) => (
+              <div key={techIndex} className="p-2 flex items-center justify-center">
+                {renderIcon(tech.icon)}
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+  
+      {/* Links */}
       {project.github && (
         <a
           href={project.github}
           target="_blank"
           rel="noopener noreferrer"
-          className="absolute top-4 right-4 text-purple-400 hover:text-white"
+          className="absolute top-4 right-4 text-purple-300 hover:text-white"
         >
           <FaGithub className="text-2xl" />
         </a>
-      )}
-      
-      {project.technologies && (
-      <div className="mt-auto p-4 bg-gray-900 rounded-lg flex items-center justify-center">
-      <div className="flex space-x-4">
-        {project.technologies.map((tech, techIndex) => (
-          <div
-            key={techIndex}
-            className="p-2 flex items-center justify-center"
-          >
-            {renderIcon(tech.icon)}
-          </div>
-
-    ))}
-  </div>
-  </div>
-        
       )}
       {project.link && (
         <a
@@ -127,6 +146,8 @@ export default function Projects() {
       )}
     </div>
   );
+  
+  
 
   return (
     <section id="projects" className="text-gray-800 bg-purple-100 body-font">
@@ -161,7 +182,7 @@ export default function Projects() {
 
         {/* Content based on active tab */}
         {activeTab === "completed" && (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
           {completedProjects.map((project) => renderProject(project))}
         </div>
         
