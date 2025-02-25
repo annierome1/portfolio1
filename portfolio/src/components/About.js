@@ -41,7 +41,7 @@ export default function About() {
         </div>
         <div
           className="glass-effect w-full h-full overflow-hidden rounded-lg shadow-lg"
-          style={{ width: "450px", height: "450px" }}
+          style={{ width: "400px", height: "400px" }}
         >
           <img
             src="/Headshot.JPG"
