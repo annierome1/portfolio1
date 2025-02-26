@@ -8,7 +8,13 @@ const Chatbot = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [streamingResponse, setStreamingResponse] = useState("");
     const eventSourceRef = useRef(null); 
-    const chatContainerRef = useRef(null);
+    const chatBoxRef = useRef(null);
+
+    const scrollToBottom = () => {
+        if (chatBoxRef.current) {
+            chatBoxRef.current.scrollTop = chatBoxRef.current.scrollHeight;
+        }
+    };
     
   
     const sendMessage = async () => {
@@ -17,16 +23,20 @@ const Chatbot = () => {
       console.log("Starting chatbot request...");
     
       const userMessage = { role: "user", content: input };
-      setMessages((prev) => [...prev, userMessage]);
-      setInput("");
-      setStreamingResponse("");
-      setIsTyping(true);
+      setMessages((prev) => {
+          const updatedMessages = [...prev, userMessage];
+          scrollToBottom();
+          return updatedMessages;
+        });
+        setInput("");
+        setStreamingResponse("");
+        setIsTyping(true);
   
   
       try {
   
-       /* const API_BASE_URL = "https://chatbotannie-production.up.railway.app"; */
-        const API_BASE_URL = "http://localhost:8006";
+        const API_BASE_URL = "https://chatbotannie-production.up.railway.app"; 
+        const API_DEV_URL = "http://localhost:8006";
   
           const startReqTime = performance.now();
           const response = await fetch(`${API_BASE_URL}/chat`, {
@@ -43,13 +53,16 @@ const Chatbot = () => {
             let botMessage = { role: "bot", content: "" };
             let firstChunk = true;
             
-            setMessages((prev) => [...prev, botMessage]);
-
+            setMessages((prev) => {
+                const updatedMessages = [...prev, botMessage];
+                scrollToBottom();
+                return updatedMessages;
+            });
+            
             let buffer = "";
-            const updateInterval = 100; // update every 100ms
+            const updateInterval = 100;
             let lastUpdateTime = Date.now();
-            const startStreamTime = performance.now();
-
+    
             while (true) {
                 const { value, done } = await reader.read();
                 if (done) break;
@@ -57,56 +70,53 @@ const Chatbot = () => {
                 const chunk = decoder.decode(value, { stream: true });
                 buffer += chunk;
                 const now = Date.now();
-
-                // Update state if enough time has passed or on first chunk
+    
                 if (firstChunk || now - lastUpdateTime > updateInterval) {
-                botMessage.content += buffer;
-                setMessages((prev) => [...prev.slice(0, -1), { ...botMessage }]);
-                buffer = "";
-                lastUpdateTime = now;
-                if (firstChunk) {
-                    firstChunk = false;
-                    setIsTyping(false);
-                }
+                    botMessage.content += buffer;
+                    setMessages((prev) => {
+                        const updated = [...prev.slice(0, -1), { ...botMessage }];
+                        scrollToBottom();
+                        return updated;
+                    });
+                    buffer = "";
+                    lastUpdateTime = now;
+                    if (firstChunk) {
+                        firstChunk = false;
+                        setIsTyping(false);
+                    }
                 }
             }
-
-            // Final update if there's any remaining buffered content
+    
             if (buffer.length > 0) {
                 botMessage.content += buffer;
-                setMessages((prev) => [...prev.slice(0, -1), { ...botMessage }]);
-            };
-
-          const endStreamTime = performance.now()
-          console.log(`Streaming took ${(endStreamTime - startStreamTime).toFixed(4)} ms`);
-          console.log(`Total chatbot response time: ${(endStreamTime - startReqTime).toFixed(4)} ms`);
+                setMessages((prev) => {
+                    const updated = [...prev.slice(0, -1), { ...botMessage }];
+                    scrollToBottom();
+                    return updated;
+                });
+            }
     
-          
         } catch (error) {
-          console.error("Error:", error);
+            console.error("Error:", error);
         } finally {
-          setIsTyping(false);
-        
-      };
+            setIsTyping(false);
+        }
     
         setInput(""); 
-      };
+    };
   
-      useEffect(() => {
-          if (chatContainerRef.current) {
-            chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
-          }
-        }, [messages]);  
-  
-  
+    useEffect(() => {
+        scrollToBottom();
+    }, [messages]);  
+    
     const clearMessages = () => {
-      setMessages([]); 
-      setStreamingResponse(""); 
-      setIsTyping(false);
-      if (eventSourceRef.current) {
-        eventSourceRef.current.close(); 
-        eventSourceRef.current = null;
-      }
+        setMessages([]); 
+        setStreamingResponse(""); 
+        setIsTyping(false);
+        if (eventSourceRef.current) {
+            eventSourceRef.current.close(); 
+            eventSourceRef.current = null;
+        }
     };
 
     return (
@@ -119,7 +129,7 @@ const Chatbot = () => {
           </button>
           <div
             className={`chat-container ${isOpen ? "show-chat" : "hide-chat"}`}
-            ref={chatContainerRef}
+            
           >
             <div className="chat-header">
               <h2>Chat with me</h2>
@@ -131,7 +141,7 @@ const Chatbot = () => {
 
           <div
             className="chatbox"
-            ref={chatContainerRef}
+            ref={chatBoxRef}
             style={{ flex: 1, overflowY: "auto"}}
           >
             {messages.map((msg, index) => (
@@ -164,6 +174,12 @@ const Chatbot = () => {
               type="text"
               value={input}
               onChange={(e) => setInput(e.target.value)}
+              onKeyDown={(e)=> {
+                if (e.key == "Enter"){
+                    sendMessage();
+                    e.preventDefault();
+                }
+              }}
               placeholder="Ask me anything..."
               style={{ flex: 1, marginRight: "5px" }}
             />
