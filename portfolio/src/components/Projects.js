@@ -77,11 +77,12 @@ export default function Projects() {
       key={project.id}
       className="p-6 bg-gray-800 rounded-lg shadow-lg transform transition-transform hover:scale-105 hover:shadow-2xl flex flex-col justify-between h-full min-h-[250px]"
     >
-      {/* Centered Text Section */}
-      <div className="flex flex-grow flex-col justify-center items-center text-center">
-        <h2 className="text-lg font-bold text-purple-100 mb-4">{project.title}</h2>
-        <DynamicText text ={project.description}/>
+      <h2 className="text-lg font-bold text-purple-100 text-center mb-4">{project.title}</h2>
+
+      <div className="flex-grow flex items-center justify-center text-center">
+        <DynamicText text={project.description} />
       </div>
+  
       {project.github && (
         <a
           href={project.github}
@@ -94,6 +95,7 @@ export default function Projects() {
       )}
     </div>
   );
+  
 
   const renderProject = (project) => (
     <div
