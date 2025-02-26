@@ -9,6 +9,7 @@ const Chatbot = () => {
     const [streamingResponse, setStreamingResponse] = useState("");
     const eventSourceRef = useRef(null); 
     const chatContainerRef = useRef(null);
+    
   
     const sendMessage = async () => {
       if (!input.trim()) return;
@@ -24,8 +25,8 @@ const Chatbot = () => {
   
       try {
   
-        const API_BASE_URL = "https://chatbotannie-production.up.railway.app"; 
-        const API_DEV_URL = "http://0.0.0.0:8006";
+       /* const API_BASE_URL = "https://chatbotannie-production.up.railway.app"; */
+        const API_BASE_URL = "http://localhost:8006";
   
           const startReqTime = performance.now();
           const response = await fetch(`${API_BASE_URL}/chat`, {
@@ -37,38 +38,44 @@ const Chatbot = () => {
           console.log(`API reuqest completed in ${(endReqTime - startReqTime).toFixed(4)} ms`);
   
     
-          const reader = response.body.getReader();
-          const decoder = new TextDecoder("utf-8");
-          let botMessage = { role: "bot", content: "" };
-          let firstChunk = true;
-          setMessages((prevMessages) => [... prevMessages, botMessage]);
-          
-          const startStreamTime = performance.now();
-          while (true) {
-              
-            const { value, done } = await reader.read();
-            if (done) break;
-    
-            const chunk = decoder.decode(value, { stream: true });
-            console.log(`Recieved chunk: ${chunk}`);
-            const cleanChunk = chunk
-              .split("\n")
-              .map(line => line.replace(/^data /, "").trim())
-              .join(" ");
-  
-              if (firstChunk) {
-                  const firstChunkTime = performance.now();
-                  console.log(`First chunk recieved ${(firstChunkTime - startStreamTime).toFixed(4)} ms`);
+            const reader = response.body.getReader();
+            const decoder = new TextDecoder("utf-8");
+            let botMessage = { role: "bot", content: "" };
+            let firstChunk = true;
+            
+            setMessages((prev) => [...prev, botMessage]);
 
-                  setIsTyping(false);
-                  firstChunk = false;
+            let buffer = "";
+            const updateInterval = 100; // update every 100ms
+            let lastUpdateTime = Date.now();
+            const startStreamTime = performance.now();
+
+            while (true) {
+                const { value, done } = await reader.read();
+                if (done) break;
+                
+                const chunk = decoder.decode(value, { stream: true });
+                buffer += chunk;
+                const now = Date.now();
+
+                // Update state if enough time has passed or on first chunk
+                if (firstChunk || now - lastUpdateTime > updateInterval) {
+                botMessage.content += buffer;
+                setMessages((prev) => [...prev.slice(0, -1), { ...botMessage }]);
+                buffer = "";
+                lastUpdateTime = now;
+                if (firstChunk) {
+                    firstChunk = false;
+                    setIsTyping(false);
                 }
-  
-              
-            botMessage.content += chunk;
-    
-            setMessages((prev) => [...prev.slice(0, -1), botMessage]); 
-          }
+                }
+            }
+
+            // Final update if there's any remaining buffered content
+            if (buffer.length > 0) {
+                botMessage.content += buffer;
+                setMessages((prev) => [...prev.slice(0, -1), { ...botMessage }]);
+            };
 
           const endStreamTime = performance.now()
           console.log(`Streaming took ${(endStreamTime - startStreamTime).toFixed(4)} ms`);
