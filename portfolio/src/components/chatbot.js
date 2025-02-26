@@ -12,7 +12,9 @@ const Chatbot = () => {
   
     const sendMessage = async () => {
       if (!input.trim()) return;
-  
+
+      console.log("Starting chatbot request...");
+    
       const userMessage = { role: "user", content: input };
       setMessages((prev) => [...prev, userMessage]);
       setInput("");
@@ -23,14 +25,16 @@ const Chatbot = () => {
       try {
   
         const API_BASE_URL = "https://chatbotannie-production.up.railway.app"; 
-        /*const API_BASE_URL = "http://0.0.0.0:8006"*/
+        const API_DEV_URL = "http://0.0.0.0:8006";
   
-  
+          const startReqTime = performance.now();
           const response = await fetch(`${API_BASE_URL}/chat`, {
               method: "POST",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify({ message: input, session_id: "session_123" }),
           });
+          const endReqTime = performance.now()
+          console.log(`API reuqest completed in ${(endReqTime - startReqTime).toFixed(4)} ms`);
   
     
           const reader = response.body.getReader();
@@ -39,19 +43,23 @@ const Chatbot = () => {
           let firstChunk = true;
           setMessages((prevMessages) => [... prevMessages, botMessage]);
           
+          const startStreamTime = performance.now();
           while (true) {
               
             const { value, done } = await reader.read();
             if (done) break;
     
             const chunk = decoder.decode(value, { stream: true });
-  
+            console.log(`Recieved chunk: ${chunk}`);
             const cleanChunk = chunk
               .split("\n")
               .map(line => line.replace(/^data /, "").trim())
               .join(" ");
   
               if (firstChunk) {
+                  const firstChunkTime = performance.now();
+                  console.log(`First chunk recieved ${(firstChunkTime - startStreamTime).toFixed(4)} ms`);
+
                   setIsTyping(false);
                   firstChunk = false;
                 }
@@ -61,16 +69,20 @@ const Chatbot = () => {
     
             setMessages((prev) => [...prev.slice(0, -1), botMessage]); 
           }
+
+          const endStreamTime = performance.now()
+          console.log(`Streaming took ${(endStreamTime - startStreamTime).toFixed(4)} ms`);
+          console.log(`Total chatbot response time: ${(endStreamTime - startReqTime).toFixed(4)} ms`);
     
           
         } catch (error) {
           console.error("Error:", error);
         } finally {
-          setIsTyping(false); // Hide typing bubble when response is done
+          setIsTyping(false);
         
       };
     
-        setInput(""); // Clear input field
+        setInput(""); 
       };
   
       useEffect(() => {
@@ -92,15 +104,12 @@ const Chatbot = () => {
 
     return (
         <div className="chatbot-wrapper" style={{ width: "350px", position: "relative" }}>
-          {/* Chat Button */}
           <button
             className={`chat-button ${isOpen ? "hide-chat" : "show-chat"}`}
             onClick={() => setIsOpen(true)}
           >
             Chat with me
           </button>
-    
-          {/* Chat Container (always rendered) */}
           <div
             className={`chat-container ${isOpen ? "show-chat" : "hide-chat"}`}
             ref={chatContainerRef}
