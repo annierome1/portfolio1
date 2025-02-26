@@ -23,7 +23,7 @@ export default function About() {
 
   return (
     <section id="about" className="h-[750px]">
-      <div className="container mx-auto flex px-10 py-20 md:flex-row flex-col h-full">
+      <div className="container mx-auto flex px-10 py-20 md:flex-row flex-col h-full gap-x-10">
       <div
         className={`md:w-1/2 lg:pr-24 md:pr-16 flex flex-col justify-center items-center text-center ${
           !chatOpened ? "pt-60" : ""
@@ -39,8 +39,8 @@ export default function About() {
           </div>
         </div>
         <div
-          className="glass-effect w-full h-full overflow-hidden rounded-lg shadow-lg"
-          style={{ width: "400px", height: "400px" }}
+          className="glass-effect w-full h-full overflow-hidden rounded-lg shadow-lg "
+          style={{ width: "400px", height: "400px", marginLeft: "20px" }}
         >
           <img
             src="/Headshot.JPG"
