@@ -6,7 +6,6 @@ export default function About() {
   const [chatOpened, setChatOpened] = useState(false);
   const chatbotWrapperRef = useRef(null);
 
-  // Listen for clicks on the chatbot buttons to toggle the introductory text.
   useEffect(() => {
     const container = chatbotWrapperRef.current;
     if (container) {
