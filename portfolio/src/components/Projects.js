@@ -12,7 +12,7 @@ import { RiTailwindCssFill } from "react-icons/ri";
 import { GrHeroku } from "react-icons/gr";
 import { IoLogoVercel, IoLogoJavascript } from "react-icons/io5";
 import { AiOutlineOpenAI } from "react-icons/ai";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useMemo } from "react";
 import "./projects.css"
 
 const DynamicText = ({ text }) => {
@@ -57,6 +57,7 @@ const ProjectCard = ({ project, animateOnLoad, index }) => {
       }, delay);
     }
   }, [animateOnLoad, index]);
+  
 
   return (
     <div
@@ -150,9 +151,22 @@ export default function Projects() {
 
   const completedProjects = projects.filter(p => p.status === "completed");
   const schoolCodeExamples = projects.filter(p => p.category === "School");
+  const scrollContainerRef = useRef();
+  const shuffleArray = (arr) => {
+    const shuffled = [...arr];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+  };
+  
+  const shuffledCompletedProjects = useMemo(() => {
+    return shuffleArray(completedProjects);
+  }, []);
 
   const renderSchoolProject = (project) => (
-    <div key={project.id} className="p-6 bg-gray-800 rounded-lg shadow-lg transform transition-transform hover:scale-105 hover:shadow-2xl flex flex-col justify-between h-full min-h-[250px]">
+    <div key={project.id} className="p-6 bg-gray-800 rounded-lg shadow-lg transform transition-transform hover:scale-105 hover:shadow-2xl flex flex-col justify-between h-full min-h-[200px]">
       <h2 className="text-lg font-bold text-purple-100 text-center mb-4">{project.title}</h2>
       <div className="flex-grow flex items-center justify-center text-center">
         <DynamicText text={project.description} />
@@ -174,10 +188,43 @@ export default function Projects() {
         </div>
 
         {activeTab === "completed" && (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
-            {completedProjects.map((project, index) => <ProjectCard key={project.id} project={project} animateOnLoad={triggerAnimation} index={index} />)}
+  <div className="relative w-full h-[600px]">
+
+    {/* Scroll Arrows */}
+    <button
+      onClick={() => scrollContainerRef.current.scrollBy({ left: -360, behavior: "smooth" })}
+      className="hidden sm:flex items-center justify-center absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-gray-700 text-white rounded-full p-2 hover:bg-gray-600 shadow-md"
+    >
+      ◀
+    </button>
+
+    <button
+      onClick={() => scrollContainerRef.current.scrollBy({ left: 360, behavior: "smooth" })}
+      className="hidden sm:flex items-center justify-center absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-gray-700 text-white rounded-full p-2 hover:bg-gray-600 shadow-md"
+    >
+      ▶
+    </button>
+
+    {/* Carousel Container */}
+    <div
+      ref={scrollContainerRef}
+      className="overflow-x-auto scroll-smooth scrollbar-hide px-6"
+    >
+      <div className="flex space-x-6 snap-x snap-mandatory w-max py-2">
+        {shuffledCompletedProjects.map((project, index) => (
+          <div
+            key={project.id || project.title}
+            className="snap-start shrink-0 w-[320px] sm:w-[360px] md:w-[400px] h-[550px] flex items-center justify-center"
+>
+            <ProjectCard project={project} animateOnLoad={triggerAnimation} index={index} />
           </div>
-        )}
+        ))}
+      </div>
+    </div>
+  </div>
+)}
+
+
 
         {activeTab === "school" && (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
