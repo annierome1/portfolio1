@@ -1,114 +1,151 @@
 export const projects = [
-  {
-    title: "ResuBuild",
-    subtitle: "Full-Stack Resume Builder utilizing OpenAI's API",
-    status: "completed",
-    category: "Full-Stack",
-    github: "https://github.com/annierome1/ResuBuild",
-    description:
-     "Resume Builder offers a seamless and user-friendly experience by providing a real-time preview of your resume as you create it. Users can sign up to save their progress and return later to make updates. Additionally, the platform features a custom cover letter generator powered by the OpenAI API. By inputting the job description, the system creates a personalized cover letter tailored to the selected resume, helping users craft compelling applications effortlessly",
-    link: "https://resumebuild-prd-9d487f141016.herokuapp.com/",
-    technologies: [
-      { name: "React", icon: "FaReact" },
-      { name: "OpenAI API", icon: "AiOutlineOpenAI"},
-      { name: "Node.js", icon: "FaNodeJs"},
-      { name: "MongoDB", icon: "SiMongodb"}
-     ]
-
-  },
+    {
+      title: "ResuBuild",
+      subtitle: "Resume builder with AI-powered cover letter generation",
+      status: "completed",
+      category: "Full-Stack",
+      github: "https://github.com/annierome1/ResuBuild",
+      description: "Create resumes in real-time and generate tailored cover letters using OpenAI.",
+      link: "https://resumebuild-prd-9d487f141016.herokuapp.com/",
+      technologies: [
+        { name: "React", icon: "FaReact" },
+        { name: "OpenAI API", icon: "AiOutlineOpenAI" },
+        { name: "Node.js", icon: "FaNodeJs" },
+        { name: "MongoDB", icon: "SiMongodb" }
+      ],
+      functions: [
+        "Real-time resume editing",
+        "Custom cover letter generation",
+        "User authentication",
+        "Progress saving"
+      ]
+    },
   
-  {
-    title: "Glazier Children's Museum",
-    subtitle: "Full-Stack Web Application",
-    status: "completed",
-    category: "Full-Stack",
-    github: "https://github.com/annierome1/FINAL_PROJECT",
-    description:
-    "A full-stack web application created for the Glazier Children's Museum as part of a software engineering project. Our team was assigned a client and challenged to develop a product for them.",
-    link: "https://anniecrome1.pythonanywhere.com/",
-    technologies: [
-      { name: "Django", icon: "SiDjango" },
-      { name: "Mysql", icon: "SiMysql" }
-
-    ]
-  },
-
-  {
-    title: "A Way Home",
-    subtitle: "VR Game created with Unity",
-    status: "completed",
-    category: "3D Development",
-    description:
-      "This game was created in hopes of eductaing users on the United Nation's Convention of the Right's of the Child through game-based learning.",
-    link: "https://leadercop.weebly.com/meet-the-vr-g4c-team.html",
-    video: "https://use.vg/kkdnVf",
-    technologies: [
-      { name: "Unity", icon: "FaUnity" },
-      { name: "VR MetaQuest", icon: "FaMeta" }
-
-    ]
-  },
+    {
+      title: "Glazier Children's Museum",
+      subtitle: "Client-focused educational web app built with Django",
+      status: "completed",
+      category: "Full-Stack",
+      github: "https://github.com/annierome1/FINAL_PROJECT",
+      description: "A client-based educational web app created for Glazier Children’s Museum.",
+      link: "https://anniecrome1.pythonanywhere.com/",
+      technologies: [
+        { name: "Django", icon: "SiDjango" },
+        { name: "MySQL", icon: "SiMysql" }
+      ],
+      functions: [
+        "Dynamic content management",
+        "Client-based feature customization",
+        "User-friendly admin panel",
+        "Educational resource delivery"
+      ]
+    },
+  
+    {
+      title: "A Way Home",
+      subtitle: "VR experience teaching UN child rights through storytelling",
+      status: "completed",
+      category: "3D Development",
+      description: "An immersive VR game teaching UN child rights via narrative-driven gameplay.",
+      link: "https://leadercop.weebly.com/meet-the-vr-g4c-team.html",
+      video: "https://use.vg/kkdnVf",
+      technologies: [
+        { name: "Unity", icon: "FaUnity" },
+        { name: "VR MetaQuest", icon: "FaMeta" }
+      ],
+      functions: [
+        "Immersive room-based storytelling",
+        "Narrative learning integration",
+        "VR player interaction",
+        "UN Convention-based dialogue"
+      ]
+    },
+  
+    {
+      title: "Portfolio",
+      subtitle: "Developer portfolio built with React and Tailwind",
+      category: "Personal",
+      status: "completed",
+      github: "https://github.com/annierome1/portfolio1",
+      description: "A personal website to showcase my projects, skills, and development work.",
+      technologies: [
+        { name: "React", icon: "FaReact" },
+        { name: "Tailwind", icon: "RiTailwindCssFill" },
+        { name: "Vercel", icon: "IoLogoVercel" }
+      ],
+      functions: [
+        "Interactive project showcase",
+        "Responsive UI design",
+        "Tech stack highlights",
+        "GitHub integration"
+      ]
+    },
+  
+    {
+      title: "ChatBot",
+      subtitle: "Context-aware AI chatbot using Pinecone and OpenAI",
+      category: "Personal",
+      status: "completed",
+      github: "https://github.com/annierome1/ChatBotAnnie",
+      description: "A personal chatbot using OpenAI and Pinecone for intelligent conversation.",
+      technologies: [
+        { name: "Python", icon: "SiPython" },
+        { name: "Pinecone", icon: "public/pinecone-icon-seeklogo.svg" },
+        { name: "FastAPI", icon: "SiFastapi" },
+        { name: "OpenAI", icon: "AiOutlineOpenAI" }
+      ],
+      functions: [
+        "Semantic search with Pinecone",
+        "Natural language responses",
+        "Custom chatbot training",
+        "FastAPI backend integration"
+      ]
+    },
+    {
+      title: "935 Surf Shack",
+      subtitle: "Client-editable restaurant site built with Next.js and Sanity",
+      status: "completed",
+      category: "Full-Stack",
+      github: "https://github.com/annierome1/935SurfShack",
+      description: "A restaurant website built for a client with a Sanity CMS for easy content updates.",
+      link: "https://935-surf-shack.vercel.app/", 
+      technologies: [
+        { name: "Next.js", icon: "FaReact" },
+        { name: "Tailwind", icon: "RiTailwindCssFill" },
+        { name: "Vercel", icon: "IoLogoVercel" },
+        { name: "Sanity", icon: "SiSanity" } 
+      ],
+      functions: [
+        "Client-friendly CMS integration via Sanity.io",
+        "Mobile-first responsive design",
+        "Editable event calendar and menus",
+        "Live site deployment via Vercel"
+      ]
+    },
+    
+    {
+      title: "Escape Room: NP Edition",
+      subtitle: "Puzzle-based educational game teaching NP-completeness",
+      status: "completed",
+      category: "Educational Game",
+      github: "https://github.com/annierome1/EscapeRoom",
+      description: "A gamified educational tool that introduces NP-completeness through an escape room built on Hamiltonian path puzzles.",
+      link: "https://annierome1.github.io/EscapeRoom/", 
+      technologies: [
+        { name: "JavaScript", icon: "IoLogoJavascript" },
+        { name: "HTML", icon: "FaHtml5" },
+        { name: "CSS", icon: "FaCss3Alt" }
+      ],
+      functions: [
+        "Hamiltonian path puzzle generation",
+        "Collectible-based escape room gameplay",
+        "Educational feedback via OpenAI storytelling",
+        "Visualization of exponential time complexity growth"
+      ]
+    },
+    
 
   
-
-  {
-    title: "Portfolio",
-    subtitle: "Personal Portfolio Website",
-    category: "Personal",
-    status: "completed",
-    github: "https://github.com/annierome1/portfolio1",
-    description:
-     "This website that I coded in order to showcase my skills, experiences, and projects.",
-     technologies: [
-      { name: "React", icon: "FaReact" },
-      { name:"TailWind", icon: "RiTailwindCssFill" },
-      { name: "Vercel", icon: "IoLogoVercel"}
-     ]
-
-  },
-  {
-    title: "ChatBot",
-    subtitle: "Personal Chatbot for Website",
-    category: "Personal",
-    status: "completed",
-    github: "https://github.com/annierome1/ChatBotAnnie",
-    description: "Built with OpenAI's API and a Pinecone vector database, this chatbot enhances user interaction by providing intelligent, context-aware responses. Running on a Python and FastAPI backend, it showcases my skills in AI development, natural language processing, and backend engineering. Try it out and explore how AI can make conversations smarter!",
-    technologies: [
-      { name: "Python", icon: "SiPython"},
-      { name: "Pinecone", icon: "public/pinecone-icon-seeklogo.svg"},
-      { name: "FastAPI", icon: "SiFastapi"},
-      { name: "OpenAI", icon: "AiOutlineOpenAI"},
-
-    ]
-
-  },
-  {
-    title: "UTampa App",
-    subtitle: "Senior Capstone project",
-    status: "in-development",
-    description: "UTampa is a multifunctional mobile app created for the University of Tampa community. As a senior Capstone project by the Computer Science program, this app will be ready by May 2025. Users can look forward to features like parking monitoring, a centralized news platform, and a range of tools to improve daily campus life.",
-    technologies: [
-      {name: "Swift", icon: "FaSwift"},
-      { name: "AWS", icon: "FaAws"},
-      { name: "AzureDevOps", icon: "VscAzureDevops"},
-
-    ]
-  },
-
-  {
-    title: "SmartBet",
-    subtitle: "Machine Learning Parlay Constrcutor",
-    category: "Personal",
-    status: "in-development",
-    description: "I’m developing a probabilistic machine learning model to predict the success rates of NFL sports bets, including parlays and player prop bets. Using a MongoDB database integrated with real-time data from SportsRadar and SportsBetOdds APIs, I analyze historical and game-level stats to provide data-driven insights for betting strategies",
-    technologies: [
-      { name: "MongoDB", icon: "SiMongodb"},
-      { name: "Postman", icon: "SiPostman"},
-      { name: ""}
-    ]
-
-
-  },
 
   {
     id: 1,
@@ -120,6 +157,7 @@ export const projects = [
       {name: "Python", icon: "SiPython"}
     ]
   },
+ 
 
   
 
@@ -163,6 +201,7 @@ export const skills = {
     { name: "HTML"},
     { name: "CSS"},
     { name: "Tailwind"},
+    { name: "Angular"}
     
   ],
   Backend: [

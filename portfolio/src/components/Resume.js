@@ -13,7 +13,7 @@ export default function Resume() {
             <span className="tooltiptext">This resume was generated with ResuBuild</span>
           </div>
         </div>
-                {/* Download Resume Button */}
+        {/* Download Resume Button */}
         <div className="text-center mb-6">
           <a
             href="/ARresume.pdf"
