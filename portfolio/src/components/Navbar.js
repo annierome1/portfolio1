@@ -19,13 +19,14 @@ export default function Navbar() {
             Resume
           </a>
         </nav>
-        <a
+     
+       {/* <a
           href="#contact"
           className="hidden md:flex items-center bg-purple-100  text-gray-800 font-medium py-2 px-6 rounded-full hover:scale-105 transition duration-300 shadow-lg">
 
           Contact Me
           <ArrowRightIcon className="w-4 h-4 ml-1" />
-        </a>
+        </a> */}
       </div>
     </header>
   );
