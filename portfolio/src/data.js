@@ -107,7 +107,7 @@ export const projects = [
       status: "completed",
       category: "Full-Stack",
       github: "https://github.com/annierome1/935SurfShack",
-      description: "A restaurant website built for a client with a Sanity CMS for easy content updates.",
+      description: "A restaurant website built for a client with a Sanity CMS for easy content updates(in-development).",
       link: "https://935-surf-shack.vercel.app/", 
       technologies: [
         { name: "Next.js", icon: "FaReact" },
