@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { ChipIcon } from "@heroicons/react/solid";
-import { FaInfoCircle } from 'react-icons/fa';
 import { skills } from "../data"; // Import skills data
 import SkillItem from "./skillItem"; // Import the SkillItem component
 import './Resume.css'

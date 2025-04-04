@@ -8,7 +8,7 @@ import {
   SiDjango, SiMysql, SiBlender, SiUnrealengine, SiMongodb, SiPostman, SiPython, SiFastapi, SiSanity
 } from "react-icons/si";
 import { VscAzureDevops } from "react-icons/vsc";
-import { RiTailwindCssFill } from "react-icons/ri";
+import { RiTailwindCssFill, RiNextjsFill } from "react-icons/ri";
 import { GrHeroku } from "react-icons/gr";
 import { IoLogoVercel, IoLogoJavascript } from "react-icons/io5";
 import { AiOutlineOpenAI } from "react-icons/ai";
@@ -37,7 +37,7 @@ const iconComponents = {
   FaReact, SiDjango, SiMysql, SiBlender, SiUnrealengine, FaUnity, FaMeta,
   FaSwift, FaNodeJs, RiTailwindCssFill, GrHeroku, AiOutlineOpenAI,
   IoLogoVercel, FaAws, VscAzureDevops, SiMongodb, SiPostman, FaJava,
-  SiPython, SiFastapi, FaAngular, IoLogoJavascript, SiSanity, FaHtml5, FaCss3Alt
+  SiPython, SiFastapi, FaAngular, IoLogoJavascript, SiSanity, FaHtml5, FaCss3Alt, RiNextjsFill
 };
 
 const renderIcon = (iconName) => {

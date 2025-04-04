@@ -2,7 +2,7 @@ import { SiPython, SiCplusplus, SiReact, SiDjango, SiUnrealengine, SiUnity, SiPo
 import { IoLogoJavascript } from "react-icons/io5";
 import { VscAzureDevops } from "react-icons/vsc";
 import { FaNodeJs, FaJava, FaSwift, FaHtml5, FaCss3Alt, FaVrCardboard, FaAws, FaAngular } from "react-icons/fa";
-import { RiTailwindCssFill } from "react-icons/ri";
+import { RiTailwindCssFill, RiNextjsFill } from "react-icons/ri";
 import { ReactSVG } from 'react-svg';
 import React from 'react';
 
@@ -35,7 +35,7 @@ const skillIcons = {
   FastAPI: <SiFastapi  className="text-gray-500 w-12 h-12"/>,
   Angular: <FaAngular className = "text-red-500 w-12 h-12"/>,
   Sanity: <SiSanity className = "text-black w-12 h-12"/>,
-  
+  NextJS: <RiNextjsFill className = "text-black w-12 h-12"/>
 };
 
 export default skillIcons;

@@ -110,7 +110,7 @@ export const projects = [
       description: "A restaurant website being built for a client with a Sanity CMS for easy content updates(in-development).",
       link: "https://935-surf-shack.vercel.app/", 
       technologies: [
-        { name: "Next.js", icon: "FaReact" },
+        { name: "Next.js", icon: "RiNextjsFill" },
         { name: "Tailwind", icon: "RiTailwindCssFill" },
         { name: "Vercel", icon: "IoLogoVercel" },
         { name: "Sanity", icon: "SiSanity" } 
@@ -201,7 +201,8 @@ export const skills = {
     { name: "HTML"},
     { name: "CSS"},
     { name: "Tailwind"},
-    { name: "Angular"}
+    { name: "Angular"},
+    { name: "NextJS"}
     
   ],
   Backend: [
