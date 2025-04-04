@@ -39,7 +39,7 @@ const Chatbot = () => {
         const API_DEV_URL = "http://localhost:8006";
   
           const startReqTime = performance.now();
-          const response = await fetch(`${API_DEV_URL}/chat`, {
+          const response = await fetch(`${API_BASE_URL}/chat`, {
               method: "POST",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify({ message: input, session_id: "session_123" }),
