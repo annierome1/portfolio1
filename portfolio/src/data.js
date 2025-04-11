@@ -143,6 +143,25 @@ export const projects = [
         "Visualization of exponential time complexity growth"
       ]
     },
+    {
+      title: "University of Tampa App",
+      subtitle: "Campus companion app for students and guests",
+      status: "completed",
+      category: "Mobile App",
+     // github: "https://github.com/annierome1/UTampa-iOS-App", // update if different
+      description: "An iOS app that provides real-time access to campus resources, parking garage availability, school calendar events, and student-specific content through Canvas Instructure API.",
+      link: "https://apps.apple.com/app/idYOUR_APP_ID", // update if published or leave null
+      technologies: [
+        { name: "Swift", icon: "FaSwift" },
+        { name: "AWS", icon: "FaAws" },
+      ],
+      functions: [
+        "Student and guest login with personalized home view",
+        "Real-time parking garage availability tracker",
+        "Campus safety contact and location features"
+      ]
+    },
+    
     
 
   
