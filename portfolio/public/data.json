@@ -118,7 +118,7 @@
     {
       "id": "chatbot",
       "title": "ChatBot",
-      "subtitle": "Context-aware AI chatbot using Pinecone and OpenAI",
+      "subtitle": "Personal AI chatbot using Pinecone and OpenAI",
       "category": "Personal",
       "status": "completed",
       "github": "https://github.com/annierome1/ChatBotAnnie",
