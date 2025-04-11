@@ -219,7 +219,7 @@
       "status": "completed",
       "category": "Mobile App",
       "description": "An iOS app that provides real-time access to campus resources, parking garage availability, school calendar events, and student-specific content through Canvas Instructure API.",
-      "link": "https://apps.apple.com/app/idYOUR_APP_ID",
+      "link": "",
       "technologies": [
         {
           "name": "Swift",
