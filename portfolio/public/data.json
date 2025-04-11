@@ -215,7 +215,7 @@
     {
       "id": "university-of-tampa-app",
       "title": "University of Tampa App",
-      "subtitle": "Campus app for students and guests",
+      "subtitle": "Campus application for students and guests",
       "status": "completed",
       "category": "Mobile App",
       "description": "An iOS app that provides real-time access to campus resources, parking garage availability, school calendar events, and student-specific content through Canvas Instructure API.",
