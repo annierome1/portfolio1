@@ -82,8 +82,7 @@
       "functions": [
         "Immersive room-based storytelling",
         "Narrative learning integration",
-        "VR player interaction",
-        "UN Convention-based dialogue"
+        "VR player interaction"
       ]
     },
     {
@@ -110,6 +109,7 @@
       ],
       "functions": [
         "Interactive project showcase",
+        "Personal Chatbot",
         "Responsive UI design",
         "Tech stack highlights",
         "GitHub integration"
@@ -117,7 +117,7 @@
     },
     {
       "id": "chatbot",
-      "title": "LLM-ChatBot Try Again",
+      "title": "LLM-ChatBot",
       "subtitle": "Personal AI chatbot powered by Pinecone, OpenAI, AWS Lambda, and API Gateway.",
       "category": "Personal",
       "status": "completed",

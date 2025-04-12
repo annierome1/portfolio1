@@ -83,24 +83,26 @@ export const projects = [
   
     {
       title: "ChatBot",
-      subtitle: "Context-aware AI chatbot using Pinecone and OpenAI",
+      subtitle: "Context-aware AI chatbot with Pinecone, OpenAI, and AWS automation",
       category: "Personal",
       status: "completed",
       github: "https://github.com/annierome1/ChatBotAnnie",
-      description: "A personal chatbot using OpenAI and Pinecone for intelligent conversation.",
+      description: "An intelligent personal chatbot using OpenAI and Pinecone, with an AWS Lambda + API Gateway setup that automatically syncs updated project and skill data from this portfolio.",
       technologies: [
         { name: "Python", icon: "SiPython" },
-        { name: "Pinecone", icon: "public/pinecone-icon-seeklogo.svg" },
         { name: "FastAPI", icon: "SiFastapi" },
-        { name: "OpenAI", icon: "AiOutlineOpenAI" }
+        { name: "OpenAI", icon: "AiOutlineOpenAI" },
+        { name: "Pinecone", icon: "public/pinecone-icon-seeklogo.svg" },
+        { name: "AWS Lambda", icon: "" },
+        { name: "API Gateway", icon: "" }
       ],
       functions: [
-        "Semantic search with Pinecone",
-        "Natural language responses",
-        "Custom chatbot training",
-        "FastAPI backend integration"
+        "Semantic search and vector retrieval with Pinecone",
+        "Dynamic natural language responses via OpenAI",
+        "Custom chatbot trained on personal and project data",
+        "Automated updates triggered by GitHub using AWS Lambda and API Gateway"
       ]
-    },
+    },    
     {
       title: "935 Surf Shack",
       subtitle: "Client-editable restaurant site built with Next.js and Sanity",
