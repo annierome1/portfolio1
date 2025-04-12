@@ -19,11 +19,11 @@ const ProjectCard = ({ project, index }) => {
       onClick={() => setIsFlipped(!isFlipped)}
     >
       <div className={`flip-card-inner ${isFlipped ? "flipped" : ""}`}>
-        <div className="flip-card-front absolute w-full h-full p-6 bg-[#1e293b] rounded-lg shadow-lg flex flex-col justify-center items-center text-center">
+        <div className="flip-card-front absolute w-full h-full p-6 bg-[#1f2937] rounded-lg shadow-lg flex flex-col justify-center items-center text-center">
           <h2 className="text-2xl font-bold text-purple-100">{project.title}</h2>
           {project.subtitle && <p className="text-sm text-purple-300 mt-2">{project.subtitle}</p>}
         </div>
-        <div className="flip-card-back absolute w-full h-full p-6 bg-[#1e293b] rounded-lg shadow-lg flex flex-col justify-center items-center text-center text-purple-100 transform rotate-y-180">
+        <div className="flip-card-back absolute w-full h-full p-6 bg-[#1f2937] rounded-lg shadow-lg flex flex-col justify-center items-center text-center text-purple-100 transform rotate-y-180">
           <div className="items-center relative z-10">
             <p className="text-sm mb-2">{project.description}</p>
             {project.functions && (
