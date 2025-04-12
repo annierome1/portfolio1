@@ -1,0 +1,17 @@
+name: Update Pinecone Index
+
+on:
+  push:
+    paths:
+      - 'public/data.json'  # <-- adjust this if it's in a different folder
+    branches:
+      - main
+
+jobs:
+  call-api:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Call Pinecone Update API
+        run: |
+          curl -X POST https://dsic5qduwc.execute-api.us-east-1.amazonaws.com/test/portfolio-updater
