@@ -117,7 +117,7 @@
     },
     {
       "id": "chatbot",
-      "title": "LLM-ChatBot",
+      "title": "LLM-ChatBot TEST",
       "subtitle": "Personal AI chatbot powered by Pinecone, OpenAI, AWS Lambda, and API Gateway.",
       "category": "Personal",
       "status": "completed",
