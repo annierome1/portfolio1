@@ -118,7 +118,7 @@
     {
       "id": "chatbot",
       "title": "ChatBot",
-      "subtitle": "Personal AI chatbot using Pinecone, OpenAI, and AWS Lambda",
+      "subtitle": "Personal AI chatbot using Pinecone, OpenAI, and AWS Lambda and Gateway.",
       "category": "Personal",
       "status": "completed",
       "github": "https://github.com/annierome1/ChatBotAnnie",
