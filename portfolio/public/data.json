@@ -143,7 +143,7 @@
         }
       ],
       "functions": [
-        "Semantic search with Pinecone",
+        "Semantic search with Pinecone ",
         "Natural language responses",
         "Custom chatbot training",
         "FastAPI backend integration"
@@ -186,7 +186,7 @@
     {
       "id": "escape-room-np-edition",
       "title": "Escape Room: NP Edition",
-      "subtitle": "Puzzle-based educational game teaching NP-completeness",
+      "subtitle": "Puzzle-based educational game teaching NP-completeness.",
       "status": "completed",
       "category": "Educational Game",
       "github": "https://github.com/annierome1/EscapeRoom",
@@ -339,6 +339,9 @@
       },
       {
         "name": "FastAPI"
+      },
+      {
+        "name": "AWS Lambda"
       }
     ]
   }
