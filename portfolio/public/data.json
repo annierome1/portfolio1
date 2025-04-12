@@ -122,7 +122,7 @@
       "category": "Personal",
       "status": "completed",
       "github": "https://github.com/annierome1/ChatBotAnnie",
-      "description": "A personal chatbot using OpenAI and Pinecone for intelligent conversation. Takes data off of this projects page every time it is updated via an aws lambda function.",
+      "description": "An intelligent, personal chatbot built with OpenAI and Pinecone, designed to facilitate dynamic conversations. The bot automatically updates its knowledge base with data from this project’s page using an AWS Lambda function whenever changes are made.",
       "technologies": [
         {
           "name": "Python",
