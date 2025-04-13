@@ -37,3 +37,10 @@
     opacity: 1;
   }
   
+  @media (max-width: 768px) {
+  .tooltip .tooltiptext {
+    width: 160px;
+    font-size: 12px;
+    padding: 4px;
+  }
+}

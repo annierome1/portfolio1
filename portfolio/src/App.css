@@ -3,13 +3,15 @@ html, body {
     height: 100%;
     margin: 0;
     background-color: #f3e7ff; /* Change this to your desired color */
-    color: #333; /* Ensuring text color contrast */
+    color: #333;
+   
   }
   
   #root {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    overflow-x: hidden;
   }
   
   main {

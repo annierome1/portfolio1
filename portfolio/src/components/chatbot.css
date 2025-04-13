@@ -1,3 +1,4 @@
+/*chatbot.css*/
 .chat-container {
     position: static !important;
     bottom: 70px !important;
@@ -199,3 +200,46 @@
   .chat-container {
     position: relative !important;
   }
+
+  @media (max-width: 768px) {
+    .chat-container {
+      position: relative !important;   /* Use relative positioning */
+      bottom: auto !important;          /* Remove fixed bottom offset */
+      right: auto !important;           /* Remove fixed right offset */
+      width: 100%;                      /* Use full available width */
+      height: auto;                     /* Allow content to define height */
+      margin: 20px auto;                /* Center horizontally with some spacing */
+      transform: none;                  /* Remove transform adjustments */
+    }
+    
+    .chatbox {
+      width: 100%;
+      min-height: 300px;                /* Ensure a minimum height for mobile */
+      padding: 10px;
+      /* Remove fixed height if any and let the content grow */
+    }
+    
+    .chat-button {
+      padding: 15px 20px;
+      font-size: 14px;
+    }
+    
+    .chat-input input, 
+    .chat-input button {
+      padding: 10px;
+      font-size: 14px;
+    }
+    
+    .chat-header {
+      height: 40px;
+      font-size: 16px;
+    }
+    
+    .close-btn {
+      font-size: 14px;
+      right: 10px;
+      top: 8px;
+    }
+  }
+  
+  
