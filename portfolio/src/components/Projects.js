@@ -97,18 +97,27 @@ function ProjectModal({ project, isOpen, onClose }) {
 
           {/* Right: auto‑playing video */}
           {project.embedUrl && (
-            <div className="mmd:w-1/3 ml-auto flex justify-end items-start">
-              <video
-                src={project.embedUrl}            // e.g. "/videos/myAppDemo.mov"
-                className="w-full max-w-xs h-auto rounded-lg shadow-inner"
-                autoPlay
-                muted
-                loop
-                playsInline
-                controls
+          <div className="md:w-1/3 ml-auto flex justify-end items-center">
+            <video
+              className="w-full max-w-xs h-auto rounded-lg shadow-inner"
+              autoPlay
+              muted
+              loop
+              playsInline
+              controls
+            >
+              <source
+                src={project.embedUrl.replace('.mov', '.mp4')}
+                type="video/mp4"
               />
-            </div>
-          )}
+              <source
+                src={project.embedUrl}
+                type="video/quicktime"
+              />
+              Your browser does not support HTML5 video.
+            </video>
+          </div>
+        )}
         </div>
       </div>
     </div>
