@@ -138,6 +138,11 @@ export const projects = [
         { name: "HTML", icon: "FaHtml5" },
         { name: "CSS", icon: "FaCss3Alt" }
       ],
+      images: [
+        "/images/escape-room/photo1.png",
+        "/images/escape-room/photo2.png",
+        
+      ],
       functions: [
         "Hamiltonian path puzzle generation",
         "Collectible-based escape room gameplay",
