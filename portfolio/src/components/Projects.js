@@ -31,87 +31,83 @@ function ProjectModal({ project, isOpen, onClose }) {
         </button>
 
         {/* Title */}
-        <h2 className="text-3xl font-bold mb-4 text-center">
-          {project.title}
-        </h2>
+        <h2 className="text-3xl font-bold mb-6 text-center">{project.title}</h2>
 
-        {/* Optional embedded demo */}
-        {project.embedUrl && (
-          <div className="mb-6">
-            <iframe
-              src={project.embedUrl}
-              title="Live Preview"
-              className="w-full h-64 md:h-80 rounded-lg border-0"
-              allowFullScreen
-            />
+        {/* two‑column layout: info on left, video on right */}
+        <div className="flex flex-col md:flex-row gap-8">
+          
+          {/* Left: details */}
+          <div className="space-y-6 md:w-1/2">
+            {/* Description */}
+            {project.description && (
+              <p className="leading-relaxed">{project.description}</p>
+            )}
+
+            {/* Functions */}
+            {project.functions?.length > 0 && (
+              <>
+                <h4 className="font-semibold">Main Functions</h4>
+                <ul className="list-disc list-inside space-y-1 text-sm">
+                  {project.functions.map((fn, idx) => (
+                    <li key={idx}>{fn}</li>
+                  ))}
+                </ul>
+              </>
+            )}
+
+            {/* Technologies */}
+            <div>
+              <h4 className="font-semibold">Technologies</h4>
+              <div className="mt-2 flex flex-wrap gap-2">
+                {project.technologies.map((tech) => (
+                  <span
+                    key={tech.name}
+                    className="bg-purple-200 text-gray-900 px-3 py-1 rounded-full text-xs font-medium"
+                  >
+                    {tech.name}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Links */}
+            <div className="flex gap-6 text-lg mt-4">
+              {project.github && (
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center hover:text-white"
+                >
+                  <FaGithub className="mr-2" /> Code
+                </a>
+              )}
+              {project.link && (
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white"
+                >
+                  Live Demo
+                </a>
+              )}
+            </div>
           </div>
-        )}
 
-        {/* Horizontal image gallery */}
-        {project.images?.length > 0 && (
-          <div className="mb-6 flex space-x-4 overflow-x-auto">
-            {project.images.map((src, i) => (
-              <img
-                key={i}
-                src={src}
-                alt={`${project.title} screenshot ${i + 1}`}
-                className="h-40 md:h-48 object-cover rounded-lg flex-shrink-0"
+          {/* Right: auto‑playing video */}
+          {project.embedUrl && (
+            <div className="mmd:w-1/3 ml-auto flex justify-end items-start">
+              <video
+                src={project.embedUrl}            // e.g. "/videos/myAppDemo.mov"
+                className="w-full max-w-xs h-auto rounded-lg shadow-inner"
+                autoPlay
+                muted
+                loop
+                playsInline
+                controls
               />
-            ))}
-          </div>
-        )}
-
-        {/* Description */}
-        {project.description && (
-          <p className="mb-6 leading-relaxed">{project.description}</p>
-        )}
-
-        {/* Functions */}
-        {project.functions?.length > 0 && (
-          <>
-            <h4 className="font-semibold mb-2">Main Functions</h4>
-            <ul className="list-disc list-inside mb-6 space-y-1 text-sm">
-              {project.functions.map((fn, idx) => (
-                <li key={idx}>{fn}</li>
-              ))}
-            </ul>
-          </>
-        )}
-
-        {/* Technologies */}
-        <h4 className="font-semibold mb-2">Technologies</h4>
-        <div className="mb-6 flex flex-wrap gap-2">
-          {project.technologies.map((tech) => (
-            <span
-              key={tech.name}
-              className="bg-purple-200 text-gray-900 px-3 py-1 rounded-full text-xs font-medium"
-            >
-              {tech.name}
-            </span>
-          ))}
-        </div>
-
-        {/* Links */}
-        <div className="flex justify-center gap-6 text-lg">
-          {project.github && (
-            <a
-              href={project.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center hover:text-white"
-            >
-              <FaGithub className="mr-2" /> Code
-            </a>
-          )}
-          {project.link && (
-            <a
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-white"
-            >
-              Live Demo
-            </a>
+            </div>
           )}
         </div>
       </div>

@@ -1,0 +1,4 @@
+.vercel
+backend/.env
+**/node_modules/
+/portfolio/node_modules/

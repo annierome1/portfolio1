@@ -155,18 +155,20 @@ export const projects = [
       subtitle: "Campus companion app for students and guests",
       status: "completed",
       category: "Mobile App",
-     // github: "https://github.com/annierome1/UTampa-iOS-App", // update if different
-      description: "An iOS app that provides real-time access to campus resources, parking garage availability, school calendar events, and student-specific content through Canvas Instructure API.",
-      link: "https://apps.apple.com/app/idYOUR_APP_ID", // update if published or leave null
+      description: "An iOS app that provides real-time access to campus resources, parking garage availability, school calendar events, interactive map, and more—all in a single intuitive interface.",
+      link: "https://testflight.apple.com/join/ESBV6uwy", // update 
       technologies: [
         { name: "Swift", icon: "FaSwift" },
         { name: "AWS", icon: "FaAws" },
       ],
       functions: [
         "Student and guest login with personalized home view",
-        "Real-time parking garage availability tracker",
-        "Campus safety contact and location features"
-      ]
+        "Real-time parking garage availability",
+        "Integration of multiple APIs including TicketMaster and Google Places",
+        "Interactive, geolocated campus map integrated throughout the app",
+        
+      ],
+      embedUrl: "/videos/utampaapp.mov"
     },
     
     
