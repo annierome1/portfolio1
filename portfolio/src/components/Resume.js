@@ -16,7 +16,7 @@ export default function Resume() {
         {/* Download Resume Button */}
         <div className="text-center mb-6">
           <a
-            href="/ARresume.pdf"
+            href="/Annie_Rome_resume.pdf"
             download="ARresume.pdf"
             className="inline-flex items-center px-3 py-3 bg-gray-700 text-white font-semibold rounded-lg shadow-md hover:bg-gray-00 transition duration-300">
             <FaDownload className="mr-2" />
@@ -25,7 +25,7 @@ export default function Resume() {
         </div>
         <div className="text-center">
           <iframe
-            src="/ARresume.pdf"
+            src="/Annie_Rome_resume.pdf"
             width="100%"
             height="800px"
             title="Resume"
