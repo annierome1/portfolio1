@@ -6,7 +6,7 @@ export const projects = [
       category: "Full-Stack",
       github: "https://github.com/annierome1/ResuBuild",
       description: "Create resumes in real-time and generate tailored cover letters using OpenAI.",
-      link: "https://resumebuild-prd-9d487f141016.herokuapp.com/",
+      link: "http://www.resubuild.com/",
       technologies: [
         { name: "React", icon: "FaReact" },
         { name: "OpenAI API", icon: "AiOutlineOpenAI" },
