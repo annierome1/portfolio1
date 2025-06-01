@@ -3,7 +3,7 @@ name: Update Pinecone Index
 on:
   push:
     paths:
-      - 'portfolio/public/data.json'  # ✅ Correct path from repo root
+      - 'portfolio/public/data.json'  
     branches:
       - main
 

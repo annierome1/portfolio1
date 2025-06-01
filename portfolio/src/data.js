@@ -110,7 +110,7 @@ export const projects = [
       category: "Full-Stack",
       github: "https://github.com/annierome1/935SurfShack",
       description: "A restaurant website being built for a client with a Sanity CMS for easy content updates(in-development).",
-      link: "https://935-surf-shack.vercel.app/", 
+      link: "https://www.935surfshack.com/", 
       technologies: [
         { name: "Next.js", icon: "RiNextjsFill" },
         { name: "Tailwind", icon: "RiTailwindCssFill" },
