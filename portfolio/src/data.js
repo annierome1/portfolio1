@@ -109,7 +109,7 @@ export const projects = [
       status: "completed",
       category: "Full-Stack",
       github: "https://github.com/annierome1/935SurfShack",
-      description: "A restaurant website being built for a client with a Sanity CMS for easy content updates(in-development).",
+      description: "A restaurant website being built for a client with a Sanity CMS for easy content updates.",
       link: "https://www.935surfshack.com/", 
       technologies: [
         { name: "Next.js", icon: "RiNextjsFill" },
@@ -123,6 +123,27 @@ export const projects = [
         "Editable event calendar and menus",
         "Live site deployment via Vercel"
       ]
+    },
+    {
+      title: "Masda Gym",
+      subtitle: "Website for Masda Gym Liverpool",
+      status: "completed",
+      category: "Full-Stack",
+      github: "https://github.com/annierome1/masdaliverpool",
+      description: "A full-stack website built for Masda Gym in Liverpool to showcase fighters, upcoming fight nights, and gym-related content.(in-development).",
+      link: "https://masdaliverpool.vercel.app/", 
+      technologies: [
+        { name: "Next.js", icon: "RiNextjsFill" },
+        { name: "CSS", icon: "FaCss3Alt" },
+        { name: "Vercel", icon: "IoLogoVercel" }
+
+      ],
+      functions: [
+          "Showcases fighters with bios, stats, and image galleries",
+          "Highlights upcoming fight nights and past event recaps",
+          "Dedicated section for the Fighter Foundation and its mission",
+          "Live deployment and automatic updates using Vercel"
+        ]
     },
     
     {
