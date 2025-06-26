@@ -130,8 +130,8 @@ export const projects = [
       status: "completed",
       category: "Full-Stack",
       github: "https://github.com/annierome1/masdaliverpool",
-      description: "A full-stack website built for Masda Gym in Liverpool to showcase fighters, upcoming fight nights, and gym-related content.(in-development).",
-      link: "https://masdaliverpool.vercel.app/", 
+      description: "A full-stack website built for Masda Gym in Liverpool to showcase fighters, upcoming fight nights, and gym-related content(in-development).",
+      link: "https://www.masdaliverpool.com/", 
       technologies: [
         { name: "Next.js", icon: "RiNextjsFill" },
         { name: "CSS", icon: "FaCss3Alt" },
