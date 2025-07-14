@@ -9,7 +9,6 @@ function ProjectModal({ project, isOpen, onClose }) {
   if (!isOpen || !project) return null;
 
   return (
-    // backdrop with blur
     <div
       className="fixed inset-0 z-50 flex items-center justify-center
                  bg-black/60 backdrop-blur-sm"
@@ -144,7 +143,7 @@ export default function Projects() {
             key={tab}
             onClick={() => {
               setActiveTab(tab);
-              setSelectedProject(null); // reset modal when switching tabs
+              setSelectedProject(null); 
             }}
             className={`mx-2 px-4 py-2 rounded-lg font-bold ${
               activeTab === tab
@@ -162,7 +161,9 @@ export default function Projects() {
         {(activeTab === 'completed' ? completed : school).map((project) => (
           <div
             key={project.slug}
-            className="p-6 bg-gray-800 rounded-lg shadow-lg cursor-pointer hover:shadow-2xl transition-shadow"
+            className="p-6 bg-gray-800 rounded-lg shadow-lg cursor-pointer
+             hover:shadow-2xl hover:bg-gray-700 hover:scale-[1.03]
+             transition-all duration-300 transform"
             onClick={() => handleOpen(project)}
           >
             {/* title + tag wrapper */}
