@@ -33,7 +33,7 @@ export default function About() {
                       order-first md:order-2 ml-0 md:ml-5`}
         >
           <img
-            src="/Headshot.JPG"
+            src="/web_pic.jpg"
             alt="Headshot"
             className="object-cover w-full h-full"
           />
