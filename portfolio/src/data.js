@@ -1,24 +1,25 @@
 export const projects = [
     {
-      title: "ResuBuild",
-      subtitle: "Resume builder with AI-powered cover letter generation",
+      title: "935 Surf Shack",
+      subtitle: "Client-editable restaurant site built with Next.js and Sanity",
       status: "completed",
       category: "Full-Stack",
-      github: "https://github.com/annierome1/ResuBuild",
-      description: "Create resumes in real-time and generate tailored cover letters using OpenAI.",
-      link: "http://www.resubuild.com/",
+      github: "https://github.com/annierome1/935SurfShack",
+      description: "A restaurant website built for a client with a Sanity CMS for easy content updates.",
+      link: "https://www.935surfshack.com/", 
       technologies: [
-        { name: "React", icon: "FaReact" },
-        { name: "OpenAI API", icon: "AiOutlineOpenAI" },
-        { name: "Node.js", icon: "FaNodeJs" },
-        { name: "MongoDB", icon: "SiMongodb" }
+        { name: "Next.js", icon: "RiNextjsFill" },
+        { name: "Tailwind", icon: "RiTailwindCssFill" },
+        { name: "Vercel", icon: "IoLogoVercel" },
+        { name: "Sanity", icon: "SiSanity" } 
       ],
       functions: [
-        "Real-time resume editing",
-        "Custom cover letter generation",
-        "User authentication",
-        "Progress saving"
-      ]
+        "Client-friendly CMS integration via Sanity.io",
+        "Mobile-first responsive design",
+        "Editable event calendar and menus",
+        "Live site deployment via Vercel"
+      ],
+      photo: "/images/surfshack.png"
     },
   
     {
@@ -41,25 +42,7 @@ export const projects = [
       ]
     },
   
-    {
-      title: "A Way Home",
-      subtitle: "VR experience teaching UN child rights through storytelling",
-      status: "completed",
-      category: "3D Development",
-      description: "An immersive VR game teaching UN child rights via narrative-driven gameplay.",
-      link: "https://leadercop.weebly.com/meet-the-vr-g4c-team.html",
-      video: "https://use.vg/kkdnVf",
-      technologies: [
-        { name: "Unity", icon: "FaUnity" },
-        { name: "VR MetaQuest", icon: "FaMeta" }
-      ],
-      functions: [
-        "Immersive room-based storytelling",
-        "Narrative learning integration",
-        "VR player interaction",
-        "UN Convention-based dialogue"
-      ]
-    },
+    
   
     {
       title: "Portfolio",
@@ -103,39 +86,20 @@ export const projects = [
         "Automated updates triggered by GitHub using AWS Lambda and API Gateway"
       ]
     },    
-    {
-      title: "935 Surf Shack",
-      subtitle: "Client-editable restaurant site built with Next.js and Sanity",
-      status: "completed",
-      category: "Full-Stack",
-      github: "https://github.com/annierome1/935SurfShack",
-      description: "A restaurant website being built for a client with a Sanity CMS for easy content updates.",
-      link: "https://www.935surfshack.com/", 
-      technologies: [
-        { name: "Next.js", icon: "RiNextjsFill" },
-        { name: "Tailwind", icon: "RiTailwindCssFill" },
-        { name: "Vercel", icon: "IoLogoVercel" },
-        { name: "Sanity", icon: "SiSanity" } 
-      ],
-      functions: [
-        "Client-friendly CMS integration via Sanity.io",
-        "Mobile-first responsive design",
-        "Editable event calendar and menus",
-        "Live site deployment via Vercel"
-      ]
-    },
+    
     {
       title: "Masda Gym",
       subtitle: "Website for Masda Gym Liverpool",
       status: "completed",
       category: "Full-Stack",
       github: "https://github.com/annierome1/masdaliverpool",
-      description: "A full-stack website built for Masda Gym in Liverpool to showcase fighters, upcoming fight nights, and gym-related content(in-development).",
+      description: "A full-stack website built for Masda Gym in Liverpool to showcase fighters, upcoming fight nights, and gym-related content. Includes CMS integration for client editing.",
       link: "https://www.masdaliverpool.com/", 
       technologies: [
         { name: "Next.js", icon: "RiNextjsFill" },
         { name: "CSS", icon: "FaCss3Alt" },
-        { name: "Vercel", icon: "IoLogoVercel" }
+        { name: "Vercel", icon: "IoLogoVercel" },
+        { name: "Sanity", icon: "SiSanity" }
 
       ],
       functions: [
@@ -143,7 +107,29 @@ export const projects = [
           "Highlights upcoming fight nights and past event recaps",
           "Dedicated section for the Fighter Foundation and its mission",
           "Live deployment and automatic updates using Vercel"
-        ]
+        ],
+        photo: "/images/masda_logo_color_wt.png"
+    },
+    {
+      title: "ResuBuild",
+      subtitle: "Resume builder with AI-powered cover letter generation",
+      status: "completed",
+      category: "Full-Stack",
+      github: "https://github.com/annierome1/ResuBuild",
+      description: "Create resumes in real-time and generate tailored cover letters using OpenAI.",
+      link: "http://www.resubuild.com/",
+      technologies: [
+        { name: "React", icon: "FaReact" },
+        { name: "OpenAI API", icon: "AiOutlineOpenAI" },
+        { name: "Node.js", icon: "FaNodeJs" },
+        { name: "MongoDB", icon: "SiMongodb" }
+      ],
+      functions: [
+        "Real-time resume editing",
+        "Custom cover letter generation",
+        "User authentication",
+        "Progress saving"
+      ]
     },
     
     {
@@ -190,6 +176,25 @@ export const projects = [
         
       ],
       embedUrl: "/videos/utampaapp.mov"
+    },
+    {
+      title: "A Way Home",
+      subtitle: "VR experience teaching UN child rights through storytelling",
+      status: "completed",
+      category: "3D Development",
+      description: "An immersive VR game teaching UN child rights via narrative-driven gameplay.",
+      link: "https://leadercop.weebly.com/meet-the-vr-g4c-team.html",
+      video: "https://use.vg/kkdnVf",
+      technologies: [
+        { name: "Unity", icon: "FaUnity" },
+        { name: "VR MetaQuest", icon: "FaMeta" }
+      ],
+      functions: [
+        "Immersive room-based storytelling",
+        "Narrative learning integration",
+        "VR player interaction",
+        "UN Convention-based dialogue"
+      ]
     },
     
     

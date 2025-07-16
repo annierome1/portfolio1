@@ -72,51 +72,62 @@ function ProjectModal({ project, isOpen, onClose }) {
             {/* Links */}
             <div className="flex gap-6 text-lg mt-4">
               {project.github && (
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center hover:text-white"
+                <button
+                  onClick={() => window.open(project.github, '_blank')}
+                  className="inline-flex items-center bg-[#0B0D1A] text-white px-4 py-2 rounded-lg transform transition-transform duration-200 ease-in-out hover:scale-110"
+
                 >
                   <FaGithub className="mr-2" /> Code
-                </a>
+                </button>
               )}
               {project.link && (
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-white"
+                <button
+                  onClick={() => window.open(project.link, '_blank')}
+                 className="
+  inline-flex items-center
+  bg-[#0B0D1A] text-white
+  px-4 py-2 rounded-lg
+  transform transition-transform duration-200 ease-in-out
+  hover:scale-110
+"
+
                 >
-                  Live Demo
-                </a>
+                  Link
+                </button>
               )}
             </div>
           </div>
 
           {/* Right: auto‑playing video */}
-          {project.embedUrl && (
-          <div className="md:w-1/3 ml-auto flex justify-end items-center">
-            <video
-              className="w-full max-w-xs h-auto rounded-lg shadow-inner"
-              autoPlay
-              muted
-              loop
-              playsInline
-              controls
-            >
-              <source
-                src={project.embedUrl.replace('.mov', '.mp4')}
-                type="video/mp4"
+         {project.embedUrl && (
+            <div className="md:w-1/3 ml-auto flex justify-end items-center">
+              <video
+                className="w-full max-w-xs h-auto rounded-lg shadow-inner"
+                autoPlay
+                muted
+                loop
+                playsInline
+                controls
+              >
+                <source
+                  src={project.embedUrl.replace('.mov', '.mp4')}
+                  type="video/mp4"
+                />
+                <source src={project.embedUrl} type="video/quicktime" />
+                Your browser does not support HTML5 video.
+              </video>
+            </div>
+          )}
+
+          {project.photo && (
+            <div className="md:w-1/3 ml-auto flex justify-end items-center pr-8">
+              <img
+                src={project.photo}
+                alt={`${project.title} screenshot`}
+                className="w-full max-w-xs h-auto rounded-lg shadow-inner"
               />
-              <source
-                src={project.embedUrl}
-                type="video/quicktime"
-              />
-              Your browser does not support HTML5 video.
-            </video>
-          </div>
-        )}
+            </div>
+          )}
         </div>
       </div>
     </div>
