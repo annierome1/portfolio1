@@ -47,7 +47,7 @@ export default function About() {
         >
           {!chatOpened && (
             <p className="text-gray-700 text-xl font-bold leading-relaxed mb-4">
-              Hello! My name is Annie. Have any questions?
+              Hello! Have any questions? Talk to my ChatBot!
             </p>
           )}
           <div ref={chatbotWrapperRef}>
