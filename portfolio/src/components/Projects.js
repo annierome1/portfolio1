@@ -31,13 +31,8 @@ function ProjectModal({ project, isOpen, onClose }) {
 
         {/* Title */}
         <h2 className="text-3xl font-bold mb-6 text-center">{project.title}</h2>
-
-        {/* two‑column layout: info on left, video on right */}
         <div className="flex flex-col md:flex-row gap-8">
-          
-          {/* Left: details */}
           <div className="space-y-6 md:w-1/2">
-            {/* Description */}
             {project.description && (
               <p className="leading-relaxed">{project.description}</p>
             )}
@@ -158,7 +153,7 @@ export default function Projects() {
             }}
             className={`mx-2 px-4 py-2 rounded-lg font-bold ${
               activeTab === tab
-                ? 'bg-purple-200 text-gray-900'
+                ? 'bg-purple-100 text-gray-900'
                 : 'bg-gray-800 text-purple-100'
             }`}
           >
